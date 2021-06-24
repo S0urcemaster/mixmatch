@@ -1,0 +1,17 @@
+
+div {
+	font-family: jura;
+}
+
+.bp3-ui-text {
+	/*font-family: jura;*/
+}
+
+.bp3-monospace-text {
+	font-family: firamono;
+}
+
+.bp3-table-container {
+	width:100%;
+	height:100%;
+}

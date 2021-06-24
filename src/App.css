@@ -1,0 +1,63 @@
+@import "~normalize.css";
+@import "~@blueprintjs/core/lib/css/blueprint.css";
+/*@import "~@blueprintjs/icons/lib/css/blueprint-icons.css";*/
+/*@import '~@blueprintjs/table/lib/css/table.css';*/
+
+@import "blueprint-tweak.css";
+
+/*:root {*/
+/*	font-size: 2vw;*/
+/*	-webkit-font-smoothing: antialiased;*/
+/*	-moz-osx-font-smoothing: grayscale;*/
+/*}*/
+
+
+html {
+	box-sizing: border-box;
+	margin: 2vh 2vw 4vh 2vw;
+	height: calc(100vh - 5vh);
+}
+
+body {
+	/*margin: 2vh 2vw 4vh 2vw;*/
+	background-color: #d3d3d3;
+	box-sizing: border-box;
+	/*height: calc(100vh - 16vh);*/
+	height:100%;
+	/*width:100%;*/
+}
+
+#root {
+	height:100%;
+}
+
+.tagVerticalTable td:first-child {
+	padding-left:0;
+	font-weight:bold;
+}
+
+.tagVerticalTable td:last-child {
+	padding-right:0;
+}
+
+.tagVerticalTable td {
+	padding: 5px 5px 0 0;
+	vertical-align:text-top;
+}
+
+.tagHorizontalTable tr:first-child {
+	font-weight:bold;
+}
+
+.tagHorizontalTable td:first-child {
+	padding-left:0;
+}
+
+.tagHorizontalTable td:last-child {
+	padding-right:0;
+}
+
+.tagHorizontalTable td {
+	padding: 0 5px 0 0;
+	vertical-align:text-top;
+}
