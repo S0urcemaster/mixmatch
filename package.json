@@ -53,7 +53,10 @@
                 {
                   "html": "./src/index.html",
                   "js": "./src/renderer.ts",
-                  "name": "main_window"
+                  "name": "main_window",
+                  "preload": {
+                    "js": "./src/preload.ts"
+                  }
                 }
               ]
             }
@@ -75,7 +78,7 @@
     "@typescript-eslint/eslint-plugin": "^4.0.1",
     "@typescript-eslint/parser": "^4.0.1",
     "css-loader": "^5.0.0",
-    "electron": "13.1.4",
+    "electron": "^13.1.4",
     "eslint": "^7.6.0",
     "eslint-plugin-import": "^2.20.0",
     "file-loader": "^6.2.0",
@@ -87,6 +90,9 @@
   },
   "dependencies": {
     "@blueprintjs/core": "^3.46.0",
+    "@blueprintjs/icons": "^3.27.0",
+    "@blueprintjs/select": "^3.16.5",
+    "@blueprintjs/table": "^3.8.34",
     "electron-squirrel-startup": "^1.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"

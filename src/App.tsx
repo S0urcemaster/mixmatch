@@ -1,3 +1,5 @@
+// import { contextBridge } from 'electron'
+
 import React, {useEffect} from 'react';
 
 import { Button,Divider } from "@blueprintjs/core";
@@ -8,15 +10,15 @@ import styles, {css} from './styles'
 
 import { useWindowSize } from './lib/WindowSizeHook'
 
-// import DJSet from "./content/DJSet";
-// import Collection from "./content/Collection"
-// import SetSelectionDetail from "./content/SetSelectionDetail"
-// import CollectionSelectionDetail from "./content/CollectionSelectionDetail"
+import DJSet from "./content/DJSet";
+import Collection from "./content/Collection"
+import SetSelectionDetail from "./content/SetSelectionDetail"
+import CollectionSelectionDetail from "./content/CollectionSelectionDetail"
 import PageHeader from "./content/PageHeader";
 import SetHeader from "./content/SetHeader";
-// import CollectionHeader from "./content/CollectionHeader";
-// import SetActions from "./content/SetActions";
-// import CollectionActions from "./content/CollectionActions";
+import CollectionHeader from "./content/CollectionHeader";
+import SetActions from "./content/SetActions";
+import CollectionActions from "./content/CollectionActions";
 
 const app:css = {
 	maxHeight:'84vh',
@@ -46,6 +48,7 @@ const tableRowItem:css = {
 	flex:'1 1 auto',
 	// width:'100%',
 }
+declare const window: any;
 
 function App() {
 
@@ -55,8 +58,18 @@ function App() {
 		console.log(width, height)
 	},[width, height])
 
-	const importSet = () => {
+	useEffect(() => {
+		console.log(window)
+		console.log(window.myAPI)
+		window.api.receive("fromMain", (data: any) => {
+			console.log(`Received ${data} from main process`);
+		});
+		window.api.send("toMain", "some data");
+	},[])
 
+	function importSet() {
+		console.log('importSet')
+		window.api.send("toMain", "some data");
 	}
 
 	return (
@@ -65,24 +78,24 @@ function App() {
 				<Divider style={{margin: 0}}/>
 				<div style={{...headerRow}}>
 					<SetHeader fileSelected={importSet}/>
-					{/*<CollectionHeader/>*/}
+					<CollectionHeader/>
 				</div>
-				{/*<div style={{...detailsRow}}>*/}
-				{/*	<SetSelectionDetail style={{marginRight:10, marginBottom:10}}/>*/}
-				{/*	<CollectionSelectionDetail style={{marginBottom:10}}/>*/}
-				{/*</div>*/}
-				{/*<div style={{...detailsRow}}>*/}
-				{/*	<SetActions style={{marginRight:10}}/>*/}
-				{/*	<CollectionActions style={{}}/>*/}
-				{/*</div>*/}
-				{/*<div style={{...tableRow}}>*/}
-				{/*	<div style={{...tableRowItem, height:height -470, width:0, marginRight:10}}>*/}
-				{/*		<DJSet/>*/}
-				{/*	</div>*/}
-				{/*	<div style={{...tableRowItem, height:height -470, width:0}}>*/}
-				{/*		<Collection/>*/}
-				{/*	</div>*/}
-				{/*</div>*/}
+				<div style={{...detailsRow}}>
+					<SetSelectionDetail style={{marginRight:10, marginBottom:10}}/>
+					<CollectionSelectionDetail style={{marginBottom:10}}/>
+				</div>
+				<div style={{...detailsRow}}>
+					<SetActions style={{marginRight:10}}/>
+					<CollectionActions style={{}}/>
+				</div>
+				<div style={{...tableRow}}>
+					<div style={{...tableRowItem, height:height -470, width:0, marginRight:10}}>
+						<DJSet/>
+					</div>
+					<div style={{...tableRowItem, height:height -470, width:0}}>
+						<Collection/>
+					</div>
+				</div>
 			</div>
 	)
 }
