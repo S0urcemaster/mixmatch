@@ -1,31 +1,26 @@
-
-import {
-	contextBridge,
-	ipcRenderer
-} from "electron"
-
-console.log('preload')
+import {	contextBridge,	ipcRenderer } from "electron"
+import com from './main/processcom'
 
 // Expose protected methods that allow the renderer process to use
 // the ipcRenderer without exposing the entire object
 contextBridge.exposeInMainWorld(
 		"api", {
 			send: (channel: string, data: any) => {
-				console.log(channel, data)
 				// whitelist channels
-				const validChannels:string[] = ["toMain"];
+				const validChannels = [com.pick_file, com.read_nml]
 				if (validChannels.includes(channel)) {
-					ipcRenderer.send(channel, data);
+					console.log('bridge send: ', channel, data)
+					ipcRenderer.send(channel, data)
 				}
 			},
 			receive: (channel: string, func: (arg0: any) => void) => {
-				console.log(channel)
-				const validChannels = ["fromMain"];
+				const validChannels = [com.pick_file, com.read_nml]
 				if (validChannels.includes(channel)) {
+					console.log('bridge receive: ', channel, func)
 					// Deliberately strip event as it includes `sender`
-					ipcRenderer.on(channel, (event, ...args) => func(args));
+					ipcRenderer.on(channel, (event, ...args) => func(args))
 				}
 			}
 		}
-);
+)
 

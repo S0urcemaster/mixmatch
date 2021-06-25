@@ -1,0 +1,574 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<NML VERSION="19">
+	<HEAD COMPANY="www.native-instruments.com" PROGRAM="Traktor"></HEAD>
+	<MUSICFOLDERS></MUSICFOLDERS>
+	<COLLECTION ENTRIES="18">
+		<ENTRY MODIFIED_DATE="2021/6/18" MODIFIED_TIME="51441"
+				 AUDIO_ID="AgcVZlZWVmZlVmZmZlZmVmZmZmZmZmZmZmZmZmZmZma//////////////+///u7////////u///////6qqv/yqqu///////////v///////6ZmZmZmZmZmZnd3d3eHif+4d3v+h3ef+Xd3z8d2d93d3d7u3u7u7/7u7u7t7v+6qq/8qqrP///////////////////t3dzd3d3dyoiIiZmJmZn//e3u/+7u7//v7///////y7q+/7qqv//u3d3t3d26qqqqqqqqv///////7//+/u//////6qqqqqqqmZmYh3d3ZmVVZURDMzIiIiIhEREREREAAAAAAAAAAAAAAAAA=="
+				 TITLE="Trippleton (Original Mix)" ARTIST="Tonja Holma">
+			<LOCATION DIR="/:Users/:sebas/:Desktop/:" FILE="Tonja Holma - Trippleton (Original Mix).mp3" VOLUME="C:"
+						 VOLUMEID="60bb9d87"></LOCATION>
+			<MODIFICATION_INFO AUTHOR_TYPE="user"></MODIFICATION_INFO>
+			<INFO BITRATE="192000" GENRE="Techno Trance Ambient" KEY="11m" PLAYCOUNT="3" PLAYTIME="520"
+					PLAYTIME_FLOAT="519.157532" IMPORT_DATE="2021/6/19" LAST_PLAYED="2021/6/13" FLAGS="12"></INFO>
+			<TEMPO BPM="125.999954" BPM_QUALITY="100.000000"></TEMPO>
+			<LOUDNESS PEAK_DB="-2.826777" PERCEIVED_DB="0.000000" ANALYZED_DB="0.465523"></LOUDNESS>
+			<MUSICAL_KEY VALUE="19"></MUSICAL_KEY>
+			<CUE_V2 NAME="AutoGrid" DISPL_ORDER="0" TYPE="4" START="347.512186" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="0"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="61299.915283" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="1"></CUE_V2>
+		</ENTRY>
+		<ENTRY MODIFIED_DATE="2020/4/18" MODIFIED_TIME="46622"
+				 AUDIO_ID="AXYpqrmqqam5qqmqt6qpqamqkiIiIiIo3P39zsv87e/s693f7vzszuz+/c7M/e7v7Ovd3u793M7d/v7v7v/////////////////////////////////////////+lDMzMzMzMzMzMzj/////7v/v/+7sfv///+7u///////////////////////////////////ad2ZmZmdmZmZmZnZmZ2ZmZmZmdnZ3h2d3d3d3d3iIia3//////////////+///////////////////////////9///////v/////+7+/u/u/v7v/f3+7+79/u/u/e7v7e3e3v3+7u39/+7nEAAA=="
+				 TITLE="Tonight (Adam Port 12 Autobahn Edit) KM033" ARTIST="Here Is Why">
+			<LOCATION DIR="/:Users/:sebas/:Desktop/:" FILE="Here Is Why - Tonight (Adam Port 12 Autobahn Edit) KM033.mp3"
+						 VOLUME="C:" VOLUMEID="60bb9d87"></LOCATION>
+			<MODIFICATION_INFO AUTHOR_TYPE="user"></MODIFICATION_INFO>
+			<INFO BITRATE="192000" GENRE="Deep House Ambient" COMMENT="x" KEY="3m" PLAYCOUNT="2" PLAYTIME="375"
+					PLAYTIME_FLOAT="374.491425" IMPORT_DATE="2021/6/19" LAST_PLAYED="2021/6/13" FLAGS="12"></INFO>
+			<TEMPO BPM="121.999527" BPM_QUALITY="100.000000"></TEMPO>
+			<LOUDNESS PEAK_DB="-1.283680" PERCEIVED_DB="0.964081" ANALYZED_DB="0.964081"></LOUDNESS>
+			<MUSICAL_KEY VALUE="23"></MUSICAL_KEY>
+			<CUE_V2 NAME="AutoGrid" DISPL_ORDER="0" TYPE="4" START="415.106177" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="1"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="3" START="415.106207" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="2"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="415.106207" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="0"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="1" START="63366.169955" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="3"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="1" START="126317.233703" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="4"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="1" START="189268.297451" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="5"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="1" START="252219.361199" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="6"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="1" START="315170.424947" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="7"></CUE_V2>
+		</ENTRY>
+		<ENTRY MODIFIED_DATE="2020/4/18" MODIFIED_TIME="46627"
+				 AUDIO_ID="AZ5JqKmaiZmZmKmam7q8y7u7vLu7u7vMvLu7zMzMzM3czMzMzMzMzMtVVVRERFVVVVRf////////////////////////////////////////////7/79d2esy3v///////////////////////////////////////////////91Vod2Vnd3ZURXiId2VmZXd1MiNmVVVVVVVVVVV///////////////////////////////////////////////////////////////////////l3iYh2f//////////////////////////////////////+qqqqmqqpqqqmAAAA=="
+				 TITLE="Lyra" ARTIST="Huxley &amp; Mark Fanciulli">
+			<LOCATION DIR="/:Users/:sebas/:Desktop/:" FILE="Huxley &amp; Mark Fanciulli - Lyra.mp3" VOLUME="C:"
+						 VOLUMEID="60bb9d87"></LOCATION>
+			<MODIFICATION_INFO AUTHOR_TYPE="user"></MODIFICATION_INFO>
+			<INFO BITRATE="192000" GENRE="House Ambient" COMMENT="x" KEY="9m" PLAYCOUNT="2" PLAYTIME="414"
+					PLAYTIME_FLOAT="413.596741" IMPORT_DATE="2021/6/19" LAST_PLAYED="2021/6/13" FLAGS="12"></INFO>
+			<TEMPO BPM="122.000099" BPM_QUALITY="100.000000"></TEMPO>
+			<LOUDNESS PEAK_DB="-0.580569" PERCEIVED_DB="1.812965" ANALYZED_DB="1.812965"></LOUDNESS>
+			<MUSICAL_KEY VALUE="17"></MUSICAL_KEY>
+			<CUE_V2 NAME="AutoGrid" DISPL_ORDER="0" TYPE="4" START="151.417390" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="3"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="151.417390" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="1"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="3" START="151.417390" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="2"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="158.185929" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="0"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="1" START="63102.185885" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="4"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="1" START="126052.954380" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="5"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="1" START="189003.722875" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="6"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="1" START="251954.491371" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="7"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="1" START="314905.259866" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="-1"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="1" START="377856.028361" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="-1"></CUE_V2>
+		</ENTRY>
+		<ENTRY MODIFIED_DATE="2020/4/18" MODIFIED_TIME="46558"
+				 AUDIO_ID="AMgAIiESIzJCMzQ1VURGdUQ0MzNDRWeKhmZlaKl2ZmZpmHZneJqZiHZo7pecyorbh5zJi8yYy6mLunesuGzKeLynjqhp25eMqGnP57y4e7pmzap7zaiqmYm8ir3Lisuau5mt7anNqImYd3mqmYma12VodmdWd3urz9uazKi+ypreqL37rMy5zLqt3Kv+qK3bmfy6z9uL7cvN/53/yM24jv/evezdj//O/t7ric/avsmKz7jf3azu/NzNrN/M7vys7a3euq7MvP/dyZVFSZeIiXfKdmnJiIZnmXnM3e7Pu926zNu7zrzu66zb3P//77ubp5ZndlVTQzMyIiERERAAAA=="
+				 TITLE="CLIP" ARTIST="Christopher Cross Ride Like The Wind (JN Extended">
+			<LOCATION DIR="/:Users/:sebas/:Desktop/:" FILE="Christopher Cross Ride Like The Wind (JN Extended - CLIP.mp3"
+						 VOLUME="C:" VOLUMEID="60bb9d87"></LOCATION>
+			<MODIFICATION_INFO AUTHOR_TYPE="user"></MODIFICATION_INFO>
+			<INFO BITRATE="192000" GENRE="Disco Remake" COMMENT="x" KEY="11m" PLAYCOUNT="4" PLAYTIME="201"
+					PLAYTIME_FLOAT="200.359177" IMPORT_DATE="2021/6/19" LAST_PLAYED="2021/6/13" FLAGS="12"></INFO>
+			<TEMPO BPM="123.999901" BPM_QUALITY="100.000000"></TEMPO>
+			<LOUDNESS PEAK_DB="-1.357542" PERCEIVED_DB="1.039370" ANALYZED_DB="-0.237137"></LOUDNESS>
+			<MUSICAL_KEY VALUE="19"></MUSICAL_KEY>
+			<CUE_V2 NAME="AutoGrid" DISPL_ORDER="0" TYPE="4" START="1023.674011" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="3"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="3" START="1023.674130" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="4"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="1023.674130" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="0"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="16507.557483" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="1"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="31991.440835" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="2"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="1" START="62959.207540" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="5"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="1" START="124894.740951" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="6"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="1" START="186830.274361" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="7"></CUE_V2>
+		</ENTRY>
+		<ENTRY MODIFIED_DATE="2020/4/18" MODIFIED_TIME="46665"
+				 AUDIO_ID="AZAVRFVURVVEVVRFnt7e7e3u3t7t7e7e3u3t7u7f7//Xd4iHiIiIiZmb3///////////////////////////////////////+bmHZniIupmIiq///////////////////////7zMr//////////////////////////8erq8uryKq5ZleJqom7qJqqmLuprtzN29nc3c/9v+/+7+3v7/7uvO3d267s3JvLmv/a//////////////////////////////////////////////////+9zP/+7t7u7u3u3t7u7e7e3u7t7t7exkRVVUVlVVVVRVVUVVVFVVVWjcyUAAAA=="
+				 TITLE="Clouds (Purple Disco Machine Remix) [Suara]" ARTIST="Martin Waslewski">
+			<LOCATION DIR="/:Users/:sebas/:Desktop/:"
+						 FILE="Martin Waslewski - Clouds (Purple Disco Machine Remix) [Suara].mp3" VOLUME="C:"
+						 VOLUMEID="60bb9d87"></LOCATION>
+			<MODIFICATION_INFO AUTHOR_TYPE="user"></MODIFICATION_INFO>
+			<INFO BITRATE="192000" GENRE="Disco Nu" COMMENT="x" KEY="12m" PLAYCOUNT="2" PLAYTIME="401"
+					PLAYTIME_FLOAT="400.169800" IMPORT_DATE="2021/6/19" LAST_PLAYED="2021/6/13" FLAGS="12"></INFO>
+			<TEMPO BPM="121.499962" BPM_QUALITY="100.000000"></TEMPO>
+			<LOUDNESS PEAK_DB="-2.239640" PERCEIVED_DB="-1.695709" ANALYZED_DB="-1.695709"></LOUDNESS>
+			<MUSICAL_KEY VALUE="14"></MUSICAL_KEY>
+			<CUE_V2 NAME="AutoGrid" DISPL_ORDER="0" TYPE="4" START="210.692719" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="4"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="3" START="210.692719" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="3"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="210.692719" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="0"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="210.692719" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="2"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="1" START="63420.589108" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="5"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="63420.589108" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="1"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="1" START="126630.485497" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="6"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="1" START="189840.381886" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="7"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="1" START="253050.278275" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="-1"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="1" START="316260.174664" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="-1"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="1" START="379470.071053" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="-1"></CUE_V2>
+		</ENTRY>
+		<ENTRY MODIFIED_DATE="2020/4/18" MODIFIED_TIME="46744"
+				 AUDIO_ID="AZJJmJmJmZiZiZiZiZiYmYczMzMzSv//7+/9/v//3//+///v3/7+/97///7+/9/v//7+/+/v/v3//+/Xjv7/7+////3//t///v/////+//+JiHaHl3iIZoiL/+/f7/79/9/un/7//+/f/v7/7+////7/7+///v///+/+/v//7//3d3dnd2Z3dmdnZ4eIiHiJmJiIiIiHh3d3d3h3h3z/////////7//v/////////v/////+/v//7/74av/v3/7+/+/f//7+/+/v/v3+/+3f/f3/79/u/f7/39/+/v7v36RVZ6qaqampqaqamamqmpqqmampmppEU0NENDQzQkMzMA=="
+				 TITLE="In Da House Tonight (Detlef Remix) [Snatch! Recor" ARTIST="Riva Starr feat. DJ Sneak">
+			<LOCATION DIR="/:Users/:sebas/:Desktop/:"
+						 FILE="Riva Starr feat. DJ Sneak - In Da House Tonight (Detlef Remix) [Snatch! Recor.mp3" VOLUME="C:"
+						 VOLUMEID="60bb9d87"></LOCATION>
+			<MODIFICATION_INFO AUTHOR_TYPE="user"></MODIFICATION_INFO>
+			<INFO BITRATE="192000" GENRE="Tech House" COMMENT="x" KEY="1d" PLAYCOUNT="2" PLAYTIME="402"
+					PLAYTIME_FLOAT="401.554291" IMPORT_DATE="2021/6/19" LAST_PLAYED="2021/6/13" FLAGS="12"></INFO>
+			<TEMPO BPM="124.999794" BPM_QUALITY="100.000000"></TEMPO>
+			<LOUDNESS PEAK_DB="-1.864631" PERCEIVED_DB="-0.267761" ANALYZED_DB="-0.267761"></LOUDNESS>
+			<MUSICAL_KEY VALUE="0"></MUSICAL_KEY>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="3" START="161.107346" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="1"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="161.107346" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="0"></CUE_V2>
+			<CUE_V2 NAME="AutoGrid" DISPL_ORDER="0" TYPE="4" START="161.107346" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="2"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="1" START="61601.208596" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="3"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="1" START="123041.309846" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="4"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="1" START="184481.411097" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="5"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="1" START="245921.512347" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="6"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="1" START="307361.613597" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="7"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="1" START="368801.714847" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="-1"></CUE_V2>
+		</ENTRY>
+		<ENTRY MODIFIED_DATE="2020/4/18" MODIFIED_TIME="46195"
+				 AUDIO_ID="Ae+f///////////////////////////////////////9TP/////////////////////////////////////////7qaqpm5mrqZyqu6msqsup///////////////////Lr/////////////////////vMve7tyqzcq6mauYqprLqruru6vMvMy73M3cvN3IZG///////////////////////////////////////+3N///////////////////////////////////////7qb//////////////////////////////////////////////////////////////+hAA=="
+				 TITLE="Preset Heaven" ARTIST="Adam Beyer &amp; Enrico Sangiuliano">
+			<LOCATION DIR="/:Users/:sebas/:Desktop/:" FILE="Adam Beyer &amp; Enrico Sangiuliano - Preset Heaven.mp3"
+						 VOLUME="C:" VOLUMEID="60bb9d87"></LOCATION>
+			<MODIFICATION_INFO AUTHOR_TYPE="user"></MODIFICATION_INFO>
+			<INFO BITRATE="192000" GENRE="Techno Anthem" COMMENT="x" KEY="1m" PLAYCOUNT="4" PLAYTIME="496"
+					PLAYTIME_FLOAT="495.464478" IMPORT_DATE="2021/6/19" LAST_PLAYED="2021/6/13" FLAGS="12"></INFO>
+			<TEMPO BPM="124.999947" BPM_QUALITY="100.000000"></TEMPO>
+			<LOUDNESS PEAK_DB="-2.481887" PERCEIVED_DB="-0.497025" ANALYZED_DB="-0.497025"></LOUDNESS>
+			<MUSICAL_KEY VALUE="21"></MUSICAL_KEY>
+			<CUE_V2 NAME="AutoGrid" DISPL_ORDER="0" TYPE="4" START="108.797111" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="0"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="61548.823368" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="1"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="122988.849618" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="2"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="153708.862743" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="3"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="215148.888993" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="4"></CUE_V2>
+		</ENTRY>
+		<ENTRY MODIFIED_DATE="2020/4/18" MODIFIED_TIME="46206"
+				 AUDIO_ID="AbcSIiIiIiIiIiIiIjNFbNy7y7vNu7y7vNy7y7vNu7zN11RHVHRXiM/////v/////////////////8ZmRmZVZnV6qWZnv/////z////8v/////z//+l2r/////3////93/////3///////////rf///9r/////7//7h4dlQ2VCRVVWVCRVZmVCRVQ2VCRVZmZlVVZVZ4h3ZVRDMkbf/////v////rv/////v////3v//////////3/////////////////6f////y/////7///////////3////+qqmYidiqmZqKmqmZmcismZmJZUMiIiIiMiIiIiMiIiIiMiIiIA=="
+				 TITLE="Bobbing Smith" ARTIST="Analog Agenda">
+			<LOCATION DIR="/:Users/:sebas/:Desktop/:" FILE="Analog Agenda - Bobbing Smith.mp3" VOLUME="C:"
+						 VOLUMEID="60bb9d87"></LOCATION>
+			<MODIFICATION_INFO AUTHOR_TYPE="user"></MODIFICATION_INFO>
+			<INFO BITRATE="192000" GENRE="Deep House Inspiring" COMMENT="x" KEY="12m" PLAYCOUNT="2" PLAYTIME="440"
+					PLAYTIME_FLOAT="439.248993" IMPORT_DATE="2021/6/19" LAST_PLAYED="2021/6/13" FLAGS="12"></INFO>
+			<TEMPO BPM="123.999893" BPM_QUALITY="100.000000"></TEMPO>
+			<LOUDNESS PEAK_DB="-1.239171" PERCEIVED_DB="3.118110" ANALYZED_DB="3.243431"></LOUDNESS>
+			<MUSICAL_KEY VALUE="14"></MUSICAL_KEY>
+			<CUE_V2 NAME="AutoGrid" DISPL_ORDER="0" TYPE="4" START="131.629601" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="0"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="23357.456059" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="1"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="54325.224670" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="2"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="65938.137899" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="3"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="96905.906509" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="4"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="116260.761891" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="5"></CUE_V2>
+		</ENTRY>
+		<ENTRY MODIFIED_DATE="2020/4/18" MODIFIED_TIME="46219"
+				 AUDIO_ID="AXVKm5ubm5uqqqqqqqqqqqm5ubm5ualczd7Nzd3Nzt3N3s3N3c3d3Mzd3N3s3N3c3O3c3dzN3s3N3c3Ozc3ezc3t3d3t3e7t3ezc3d7c7e7u7d3uzc3e3t7e3d7u7u3c3YVUI2dCJFRTNDQ53N3dzt7d3t7d3u3O3tzd7dzt7d3rhnhYh2NoeGaHh1ZEY1VGRnaXZmiH7+/9/f/v7v7///7+/+/v/v7v7+7M3d7uze7t3u7t7u7d/e3e7tzt7d7u/u/u7u7v7//d79hlZWdVU1RVR2Vknt397d/t7e/Pzv3u397d/s/O/P3d3Nzcy8vKu8q6u7qqqqqqqqqrm5ubUA=="
+				 TITLE="All I See (Original Mix)" ARTIST="Anja Schneider">
+			<LOCATION DIR="/:Users/:sebas/:Desktop/:" FILE="Anja Schneider - All I See (Original Mix).mp3" VOLUME="C:"
+						 VOLUMEID="60bb9d87"></LOCATION>
+			<MODIFICATION_INFO AUTHOR_TYPE="user"></MODIFICATION_INFO>
+			<INFO BITRATE="192000" GENRE="Techno Lite Summer" COMMENT="y" KEY="1m" PLAYCOUNT="2" PLAYTIME="374"
+					PLAYTIME_FLOAT="373.159180" IMPORT_DATE="2021/6/19" LAST_PLAYED="2021/6/13" FLAGS="12"></INFO>
+			<TEMPO BPM="123.999794" BPM_QUALITY="100.000000"></TEMPO>
+			<LOUDNESS PEAK_DB="-2.227707" PERCEIVED_DB="0.857277" ANALYZED_DB="0.857277"></LOUDNESS>
+			<MUSICAL_KEY VALUE="21"></MUSICAL_KEY>
+			<CUE_V2 NAME="AutoGrid" DISPL_ORDER="0" TYPE="4" START="211.242035" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="0"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="31179.035415" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="1"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="93114.622176" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="2"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="139566.312247" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="3"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="155050.208937" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="4"></CUE_V2>
+		</ENTRY>
+		<ENTRY MODIFIED_DATE="2020/4/18" MODIFIED_TIME="46240"
+				 AUDIO_ID="AX4BRERERERERERERERERERERERERERH7f3t7u3t/u7u7t7f3t7uxkZkU0Qo/v/v////7//+///v/v////7//+/////////////+/+t7h5Z4eGZ2Zlav/////////////////////////t25iId4iIiHiHh4iv///////////9zv/////////////2RkRTVEU0Q0MzM0VEVGVFRFRVVUVVVVVVVVVmVVZlVWZlVWZmZmdlVonf////////////3//////////////////////////v/////+///////v/////+/////////93t7e3t7e3t7exURERERERERFRGkgAA=="
+				 TITLE="Yeah Yeah (Original Mix)" ARTIST="David Penn">
+			<LOCATION DIR="/:Users/:sebas/:Desktop/:" FILE="David Penn - Yeah Yeah (Original Mix).mp3" VOLUME="C:"
+						 VOLUMEID="60bb9d87"></LOCATION>
+			<MODIFICATION_INFO AUTHOR_TYPE="user"></MODIFICATION_INFO>
+			<INFO BITRATE="192000" GENRE="House Trance" COMMENT="x" KEY="1m" PLAYCOUNT="2" PLAYTIME="383"
+					PLAYTIME_FLOAT="382.145294" IMPORT_DATE="2021/6/19" LAST_PLAYED="2021/6/13" FLAGS="12"></INFO>
+			<TEMPO BPM="121.999947" BPM_QUALITY="100.000000"></TEMPO>
+			<LOUDNESS PEAK_DB="-1.637929" PERCEIVED_DB="-0.039803" ANALYZED_DB="-0.039803"></LOUDNESS>
+			<MUSICAL_KEY VALUE="21"></MUSICAL_KEY>
+			<CUE_V2 NAME="AutoGrid" DISPL_ORDER="0" TYPE="4" START="1088.114619" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="0"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="32563.538115" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="1"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="64038.961729" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="2"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="111252.097151" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="3"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="126989.808958" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="4"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="174202.944380" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="5"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="205678.367994" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="6"></CUE_V2>
+		</ENTRY>
+		<ENTRY MODIFIED_DATE="2020/4/18" MODIFIED_TIME="46442"
+				 AUDIO_ID="AaIBERERERERERERERIRESEhEhIRISEiIhISISEiIiIiIjIiIyIiIjIzIyMzMzMzNEREU0RFRUVVVZhompqZqKiZioqZqKiZmoqJqKmpmpqJqKmpmoqJqaipmoqJmampmolmZVVlVlZWV5d5qoqamaiomZqamaioqZqaiaipqZqKiaipqZqaiampqZqKiqmpqZhWqFWWh1l2VVepZVVGmlVWlVinqpmpqaqampqpqaqampqpqamqm5qpqamqmpqpqZdWVlVYllVVV8yqqamampqZqamqmpqZqamqmpqZqamZmZqJmJiZmGZVREMzMzMzMzMiIiIiEREQAAAAAAAAAA=="
+				 TITLE="Long Lost Love" ARTIST="The Revenge">
+			<LOCATION DIR="/:Users/:sebas/:Desktop/:" FILE="The Revenge - Long Lost Love.mp3" VOLUME="C:"
+						 VOLUMEID="60bb9d87"></LOCATION>
+			<MODIFICATION_INFO AUTHOR_TYPE="user"></MODIFICATION_INFO>
+			<INFO BITRATE="192000" GENRE="Disco" COMMENT="x" KEY="12m" PLAYCOUNT="2" PLAYTIME="419"
+					PLAYTIME_FLOAT="418.063660" IMPORT_DATE="2021/6/19" LAST_PLAYED="2021/6/13" FLAGS="12"></INFO>
+			<TEMPO BPM="121.999405" BPM_QUALITY="100.000000"></TEMPO>
+			<LOUDNESS PEAK_DB="-2.560216" PERCEIVED_DB="1.526665" ANALYZED_DB="1.526665"></LOUDNESS>
+			<MUSICAL_KEY VALUE="14"></MUSICAL_KEY>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="171.247169" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="0"></CUE_V2>
+			<CUE_V2 NAME="AutoGrid" DISPL_ORDER="0" TYPE="4" START="1645.777941" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="6"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="94597.051011" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="1"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="157548.177747" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="2"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="173285.959431" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="3"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="236237.086167" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="4"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="267712.649535" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="5"></CUE_V2>
+		</ENTRY>
+		<ENTRY MODIFIED_DATE="2020/4/18" MODIFIED_TIME="46358"
+				 AUDIO_ID="AYRbq7qqu7qsuqrKq5urqbq6rKuqyrqbq6q6uq2rqtu/////////////7v///////////8eFh2hYdoWHaFie////////////3v/////////v//7////////////83t7d7e3e7t39zP//7//+///v//7////////////5///v//283Kvd3Lqru5m7qZq6mKvLrby628utvLrbzK28ytvMrbzL28ysurqqmZqqqbrv/////////////////////////O/////////////v////////////y8zczM3M3Nu8zcvM27u8u83LvMu7q7qqu7qsu6rKu6q7uqq7rKuqynEAAA=="
+				 TITLE="Money Talks (ALiVE Recordings)" ARTIST="Man With No Shadow">
+			<LOCATION DIR="/:Users/:sebas/:Desktop/:" FILE="Man With No Shadow - Money Talks (ALiVE Recordings).mp3"
+						 VOLUME="C:" VOLUMEID="60bb9d87"></LOCATION>
+			<MODIFICATION_INFO AUTHOR_TYPE="user"></MODIFICATION_INFO>
+			<INFO BITRATE="192000" GENRE="Techno Mad Anthem" COMMENT="x" KEY="11m" PLAYCOUNT="2" PLAYTIME="389"
+					PLAYTIME_FLOAT="388.466949" IMPORT_DATE="2021/6/19" LAST_PLAYED="2021/6/13" FLAGS="12"></INFO>
+			<TEMPO BPM="124.999954" BPM_QUALITY="100.000000"></TEMPO>
+			<LOUDNESS PEAK_DB="-1.659416" PERCEIVED_DB="0.472441" ANALYZED_DB="-0.247025"></LOUDNESS>
+			<MUSICAL_KEY VALUE="19"></MUSICAL_KEY>
+			<CUE_V2 NAME="AutoGrid" DISPL_ORDER="0" TYPE="4" START="152.214915" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="0"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="46232.231790" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="1"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="76952.243040" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="2"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="92312.248665" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="3"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="138392.265540" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="4"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="184472.282415" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="5"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="199832.288040" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="6"></CUE_V2>
+		</ENTRY>
+		<ENTRY MODIFIED_DATE="2021/1/21" MODIFIED_TIME="77401"
+				 AUDIO_ID="AUsnZkVmZkV4ZUV2ZknLqoq7upq7qZq6lXiaqqyqubyquKu7udu7uaqsu7qrqrq5eah2Z3d2ZmiHZ3d4qqq7u7u7u6u7u6uovbu6uruquru6u7qqzLu7vKu6u7u7uHd2mYd3h4d3iIdnh5rJmqqZqaqZqqqamau/y7u7u6u6q6q6u6rMuqqqqoarqrqrurvLu7u6uru6upqaqpzLuquqqqy7uqqqqpu7u6qqqru8url3eJl4h3iZmYmYh4d4h6qZiJiZh4eId4mZ7uu8urvLuru7upmIery7msy7msy7m8u7nKmbq7y6q6upqqu9vLu6q6vKq6uXi6vLu5mGVDIhAA=="
+				 TITLE="Blue House (Original Mix)" ARTIST="DJ Hardhome">
+			<LOCATION DIR="/:Users/:sebas/:Desktop/:" FILE="14696072_Blue House_(Original Mix).mp3" VOLUME="C:"
+						 VOLUMEID="60bb9d87"></LOCATION>
+			<ALBUM TRACK="1" TITLE="Blue House"></ALBUM>
+			<MODIFICATION_INFO AUTHOR_TYPE="user"></MODIFICATION_INFO>
+			<INFO BITRATE="320000" GENRE="Dance / Electro Pop" LABEL="Horus Music Limited"
+					COVERARTID="051/TBEASQD1IPG02D1BSMP2CACUPPIA" KEY="Gmaj" PLAYCOUNT="8" PLAYTIME="332"
+					PLAYTIME_FLOAT="331.258789" IMPORT_DATE="2021/6/19" LAST_PLAYED="2021/6/13" RELEASE_DATE="2020/12/10"
+					FLAGS="12"></INFO>
+			<TEMPO BPM="125.000267" BPM_QUALITY="100.000000"></TEMPO>
+			<LOUDNESS PEAK_DB="-0.521728" PERCEIVED_DB="1.230118" ANALYZED_DB="1.230118"></LOUDNESS>
+			<MUSICAL_KEY VALUE="14"></MUSICAL_KEY>
+			<CUE_V2 NAME="AutoGrid" DISPL_ORDER="0" TYPE="4" START="65.914792" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="0"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="15431.881980" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="1"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="30791.849167" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="2"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="61511.783542" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="3"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="76871.750730" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="4"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="138311.619480" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="5"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="153671.586668" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="6"></CUE_V2>
+		</ENTRY>
+		<ENTRY MODIFIED_DATE="2020/4/10" MODIFIED_TIME="48041"
+				 AUDIO_ID="AYpcvMvLy7y8vMvLzMzMzMzMzMzMzMzMzMzMzNvMzbzM7v7t3e3c3c3N7dvLmHZ3RWVmZDz+/////v//7/////////7//+/9v//////+///v/rnNuph1aavJhneu//////3////9u////////////////////////////////9z//////+uqzZda2qrNp4u5qauHWMmGi3RIuZebiIrbiK25iN///////////////////////////////////////8/////v/////+/9n///7///////////7+///////////+/u/v/f3/3+3/7d3O3dzt3c7d3O3d3t7d/d3FEAAA=="
+				 TITLE="Mumbo Jumbo Original Mix Bedrock" ARTIST="Quivver">
+			<LOCATION DIR="/:Users/:sebas/:Desktop/:" FILE="Quivver - Mumbo Jumbo Original Mix Bedrock.mp3" VOLUME="C:"
+						 VOLUMEID="60bb9d87"></LOCATION>
+			<MODIFICATION_INFO AUTHOR_TYPE="user"></MODIFICATION_INFO>
+			<INFO BITRATE="192000" GENRE="Deep House" KEY="11m" PLAYCOUNT="1" PLAYTIME="395" PLAYTIME_FLOAT="394.161621"
+					IMPORT_DATE="2021/6/19" LAST_PLAYED="2021/6/13" FLAGS="12"></INFO>
+			<TEMPO BPM="122.999954" BPM_QUALITY="100.000000"></TEMPO>
+			<LOUDNESS PEAK_DB="-1.101020" PERCEIVED_DB="0.339218" ANALYZED_DB="0.339218"></LOUDNESS>
+			<MUSICAL_KEY VALUE="19"></MUSICAL_KEY>
+			<CUE_V2 NAME="AutoGrid" DISPL_ORDER="0" TYPE="4" START="189.868510" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="0"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="78238.678045" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="1"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="125067.963766" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="2"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="140677.725673" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="3"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="156287.487580" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="4"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="179702.130440" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="5"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="203116.773301" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="6"></CUE_V2>
+		</ENTRY>
+		<ENTRY MODIFIED_DATE="2020/4/10" MODIFIED_TIME="48052"
+				 AUDIO_ID="Abmf/////////////////////////////////////////////I///////////////////////////////////////////////////////////////////////////////u3cy7uqmYmaqYhP//////////////////////////////////////7Lu6maqZ////////////////////////RlMiIiVlVDM0ZnRUVVeJd2Wf///////////////////////////////////////+7cuamb///////////////////////////////////////////u3KlRAAAAAAAAAA=="
+				 TITLE="Eyes On You (Original Mix)" ARTIST="Rudosa">
+			<LOCATION DIR="/:Users/:sebas/:Desktop/:" FILE="Rudosa - Eyes On You (Original Mix).mp3" VOLUME="C:"
+						 VOLUMEID="60bb9d87"></LOCATION>
+			<MODIFICATION_INFO AUTHOR_TYPE="user"></MODIFICATION_INFO>
+			<INFO BITRATE="192000" GENRE="Techno Trance Hard" KEY="9m" PLAYCOUNT="2" PLAYTIME="442"
+					PLAYTIME_FLOAT="441.025299" IMPORT_DATE="2021/6/19" LAST_PLAYED="2021/6/13" FLAGS="12"></INFO>
+			<TEMPO BPM="126.000107" BPM_QUALITY="100.000000"></TEMPO>
+			<LOUDNESS PEAK_DB="-2.541568" PERCEIVED_DB="-0.358810" ANALYZED_DB="-0.358810"></LOUDNESS>
+			<MUSICAL_KEY VALUE="17"></MUSICAL_KEY>
+			<CUE_V2 NAME="AutoGrid" DISPL_ORDER="0" TYPE="4" START="142.347530" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="0"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="30618.512171" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="1"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="61094.676812" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="2"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="61094.676812" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="3"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="61094.676812" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="4"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="61094.676812" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="5"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="61094.676812" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="6"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="61094.676812" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="7"></CUE_V2>
+		</ENTRY>
+		<ENTRY MODIFIED_DATE="2021/3/6" MODIFIED_TIME="18790"
+				 AUDIO_ID="ARd8zMzMzMzMzMzMzMyjNK3czMzdzNzN3M3N3aRWzt3d3d3d3d7d3t3upnfe7e7u7t7u7u3v7u6niIdmd3d2d3d3Z4h3d3iImYiZmZiZmZmampq7uqz////////////////szv///////////////+3f////////////////3Nx2VmZmVWZmZmZ2dmZ3d4d3h4h3iHiHiIeIeImJqZmZqZmampqaqqvMuq/////////////////M3////////////////9zf////////////////3N/////////////////M3//////u7/7t3u7e2VaN7c3d3czd3dzN3d3INWQQAA=="
+				 TITLE="Shifters (Tech House Vip Mix)" ARTIST="Ron Fernandez">
+			<LOCATION DIR="/:Users/:sebas/:Desktop/:" FILE="14964323_Shifters_(Tech House Vip Mix).mp3" VOLUME="C:"
+						 VOLUMEID="60bb9d87"></LOCATION>
+			<ALBUM TRACK="6" TITLE="House Sessions (Spring '21)"></ALBUM>
+			<MODIFICATION_INFO AUTHOR_TYPE="user"></MODIFICATION_INFO>
+			<INFO BITRATE="320000" GENRE="Tech House" LABEL="Futurefunk Recordings"
+					COVERARTID="009/JMSHHCCMRR4ZYC0HOX2AD0NXNMQD" KEY="Gbmaj" PLAYCOUNT="2" PLAYTIME="280"
+					PLAYTIME_FLOAT="279.431824" IMPORT_DATE="2021/6/19" LAST_PLAYED="2021/6/13" RELEASE_DATE="2021/1/1"
+					FLAGS="12"></INFO>
+			<TEMPO BPM="124.999352" BPM_QUALITY="100.000000"></TEMPO>
+			<LOUDNESS PEAK_DB="-0.758279" PERCEIVED_DB="-0.327072" ANALYZED_DB="-0.327072"></LOUDNESS>
+			<MUSICAL_KEY VALUE="18"></MUSICAL_KEY>
+			<CUE_V2 NAME="AutoGrid" DISPL_ORDER="0" TYPE="4" START="55.197999" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="0"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="15415.277687" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="1"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="30775.357375" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="2"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="46135.437063" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="3"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="61495.516751" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="4"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="92215.676126" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="5"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="138295.915190" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="6"></CUE_V2>
+		</ENTRY>
+		<ENTRY MODIFIED_DATE="2021/4/25" MODIFIED_TIME="39917"
+				 AUDIO_ID="AUwEanXHanvHeGmGl2hmp1x2l7x4hqhpdAXbvLzLy8vMrLvKzL/e///+/+////////////////7f/u7//+//7/3////////8mHh3ZVVVRERERFRERERERVRUREZ3mX//////7//////v/////+7u/v///v+In+///v7v/+///u///////////////tvK////////7////v/v/v7u3/79//////VDMzRDRDRDQzQzRWZmZVZVVVVWVnZmfv///+////////7////+/u/////+/+///v//7//v///vxov+7//+//////7+7//v///v/////+///9u7vMu7u7qJiIZ3IA=="
+				 TITLE="Java (Original Mix)" ARTIST="Calmos &amp; Berzingue">
+			<LOCATION DIR="/:Users/:sebas/:Desktop/:" FILE="14713924_Java_(Original Mix).mp3" VOLUME="C:"
+						 VOLUMEID="60bb9d87"></LOCATION>
+			<ALBUM TRACK="1" TITLE="Belleville"></ALBUM>
+			<MODIFICATION_INFO AUTHOR_TYPE="user"></MODIFICATION_INFO>
+			<INFO BITRATE="320000" GENRE="Deep House" LABEL="Pont Neuf Records" COMMENT="-2"
+					COVERARTID="107/LPJWXTDDI3XX3DIZ0IT3B1W4JSXA" KEY="Gmin" PLAYCOUNT="9" PLAYTIME="333"
+					PLAYTIME_FLOAT="332.068573" IMPORT_DATE="2021/6/19" LAST_PLAYED="2021/6/13" RELEASE_DATE="2021/2/12"
+					FLAGS="12"></INFO>
+			<TEMPO BPM="127.999969" BPM_QUALITY="100.000000"></TEMPO>
+			<LOUDNESS PEAK_DB="-0.068540" PERCEIVED_DB="0.557083" ANALYZED_DB="0.557083"></LOUDNESS>
+			<MUSICAL_KEY VALUE="19"></MUSICAL_KEY>
+			<CUE_V2 NAME="AutoGrid" DISPL_ORDER="0" TYPE="4" START="842.760801" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="0"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="30842.767954" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="1"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="60842.775106" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="2"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="90842.782259" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="3"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="120842.789412" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="4"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="150842.796564" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="5"></CUE_V2>
+		</ENTRY>
+		<ENTRY MODIFIED_DATE="2021/2/14" MODIFIED_TIME="65704"
+				 AUDIO_ID="AWI2d2ZlhVZWZVZHVGiJiIeYeIiYiHmInLzb3Ly3u829y8y////////////////////////////////////////////3eGZldlZVdVZHVWiJh4eYeIiYeHmHf////////////////////////////////////////////Mvv///////////IeGZ2d1ZVdVZWZG3u7t3e3t7u7e3t/////////////////////////////////////////////MvM3bve7LzN27y7mpmZioiImYiYmI//////////////////////////////////////////////////////////4A=="
+				 TITLE="Bass Selector (Original Mix)" ARTIST="Guarvand">
+			<LOCATION DIR="/:Users/:sebas/:Desktop/:" FILE="14816734_Bass Selector_(Original Mix).mp3" VOLUME="C:"
+						 VOLUMEID="60bb9d87"></LOCATION>
+			<ALBUM TRACK="13" TITLE="INDISPENSABLE 1"></ALBUM>
+			<MODIFICATION_INFO AUTHOR_TYPE="user"></MODIFICATION_INFO>
+			<INFO BITRATE="320000" GENRE="Bass House" LABEL="Moore Dancing" COVERARTID="026/0EPUTYDKXBLDZDCRYUZCAZT3FYGC"
+					KEY="Fmin" PLAYCOUNT="5" PLAYTIME="355" PLAYTIME_FLOAT="354.142029" IMPORT_DATE="2021/6/19"
+					LAST_PLAYED="2021/6/13" RELEASE_DATE="2021/2/11" FLAGS="12"></INFO>
+			<TEMPO BPM="124.999825" BPM_QUALITY="100.000000"></TEMPO>
+			<LOUDNESS PEAK_DB="-0.860124" PERCEIVED_DB="-0.053619" ANALYZED_DB="-0.053619"></LOUDNESS>
+			<MUSICAL_KEY VALUE="17"></MUSICAL_KEY>
+			<CUE_V2 NAME="AutoGrid" DISPL_ORDER="0" TYPE="4" START="45.404561" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="0"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="15405.426123" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="1"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="30765.447686" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="2"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="46125.469248" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="3"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="61485.490811" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="4"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="92205.533936" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="5"></CUE_V2>
+			<CUE_V2 NAME="n.n." DISPL_ORDER="0" TYPE="0" START="122925.577061" LEN="0.000000" REPEATS="-1"
+					  HOTCUE="6"></CUE_V2>
+		</ENTRY>
+	</COLLECTION>
+	<SETS ENTRIES="0"></SETS>
+	<PLAYLISTS>
+		<NODE TYPE="FOLDER" NAME="$ROOT">
+			<SUBNODES COUNT="1">
+				<NODE TYPE="PLAYLIST" NAME="Preparation">
+					<PLAYLIST ENTRIES="18" TYPE="LIST" UUID="4a47f2afc8364bd7aec89fbd7d1b3bca">
+						<ENTRY>
+							<PRIMARYKEY TYPE="TRACK"
+											KEY="C:/:Users/:sebas/:Desktop/:Tonja Holma - Trippleton (Original Mix).mp3"></PRIMARYKEY>
+						</ENTRY>
+						<ENTRY>
+							<PRIMARYKEY TYPE="TRACK"
+											KEY="C:/:Users/:sebas/:Desktop/:Here Is Why - Tonight (Adam Port 12 Autobahn Edit) KM033.mp3"></PRIMARYKEY>
+						</ENTRY>
+						<ENTRY>
+							<PRIMARYKEY TYPE="TRACK"
+											KEY="C:/:Users/:sebas/:Desktop/:Huxley &amp; Mark Fanciulli - Lyra.mp3"></PRIMARYKEY>
+						</ENTRY>
+						<ENTRY>
+							<PRIMARYKEY TYPE="TRACK"
+											KEY="C:/:Users/:sebas/:Desktop/:Christopher Cross Ride Like The Wind (JN Extended - CLIP.mp3"></PRIMARYKEY>
+						</ENTRY>
+						<ENTRY>
+							<PRIMARYKEY TYPE="TRACK"
+											KEY="C:/:Users/:sebas/:Desktop/:Martin Waslewski - Clouds (Purple Disco Machine Remix) [Suara].mp3"></PRIMARYKEY>
+						</ENTRY>
+						<ENTRY>
+							<PRIMARYKEY TYPE="TRACK"
+											KEY="C:/:Users/:sebas/:Desktop/:Riva Starr feat. DJ Sneak - In Da House Tonight (Detlef Remix) [Snatch! Recor.mp3"></PRIMARYKEY>
+						</ENTRY>
+						<ENTRY>
+							<PRIMARYKEY TYPE="TRACK"
+											KEY="C:/:Users/:sebas/:Desktop/:Adam Beyer &amp; Enrico Sangiuliano - Preset Heaven.mp3"></PRIMARYKEY>
+						</ENTRY>
+						<ENTRY>
+							<PRIMARYKEY TYPE="TRACK"
+											KEY="C:/:Users/:sebas/:Desktop/:Analog Agenda - Bobbing Smith.mp3"></PRIMARYKEY>
+						</ENTRY>
+						<ENTRY>
+							<PRIMARYKEY TYPE="TRACK"
+											KEY="C:/:Users/:sebas/:Desktop/:Anja Schneider - All I See (Original Mix).mp3"></PRIMARYKEY>
+						</ENTRY>
+						<ENTRY>
+							<PRIMARYKEY TYPE="TRACK"
+											KEY="C:/:Users/:sebas/:Desktop/:David Penn - Yeah Yeah (Original Mix).mp3"></PRIMARYKEY>
+						</ENTRY>
+						<ENTRY>
+							<PRIMARYKEY TYPE="TRACK"
+											KEY="C:/:Users/:sebas/:Desktop/:The Revenge - Long Lost Love.mp3"></PRIMARYKEY>
+						</ENTRY>
+						<ENTRY>
+							<PRIMARYKEY TYPE="TRACK"
+											KEY="C:/:Users/:sebas/:Desktop/:Man With No Shadow - Money Talks (ALiVE Recordings).mp3"></PRIMARYKEY>
+						</ENTRY>
+						<ENTRY>
+							<PRIMARYKEY TYPE="TRACK"
+											KEY="C:/:Users/:sebas/:Desktop/:14696072_Blue House_(Original Mix).mp3"></PRIMARYKEY>
+						</ENTRY>
+						<ENTRY>
+							<PRIMARYKEY TYPE="TRACK"
+											KEY="C:/:Users/:sebas/:Desktop/:Quivver - Mumbo Jumbo Original Mix Bedrock.mp3"></PRIMARYKEY>
+						</ENTRY>
+						<ENTRY>
+							<PRIMARYKEY TYPE="TRACK"
+											KEY="C:/:Users/:sebas/:Desktop/:Rudosa - Eyes On You (Original Mix).mp3"></PRIMARYKEY>
+						</ENTRY>
+						<ENTRY>
+							<PRIMARYKEY TYPE="TRACK"
+											KEY="C:/:Users/:sebas/:Desktop/:14964323_Shifters_(Tech House Vip Mix).mp3"></PRIMARYKEY>
+						</ENTRY>
+						<ENTRY>
+							<PRIMARYKEY TYPE="TRACK"
+											KEY="C:/:Users/:sebas/:Desktop/:14713924_Java_(Original Mix).mp3"></PRIMARYKEY>
+						</ENTRY>
+						<ENTRY>
+							<PRIMARYKEY TYPE="TRACK"
+											KEY="C:/:Users/:sebas/:Desktop/:14816734_Bass Selector_(Original Mix).mp3"></PRIMARYKEY>
+						</ENTRY>
+					</PLAYLIST>
+				</NODE>
+			</SUBNODES>
+		</NODE>
+	</PLAYLISTS>
+	<INDEXING></INDEXING>
+</NML>

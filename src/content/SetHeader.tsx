@@ -10,7 +10,7 @@ export default function (props: PropsWithChildren<any> & { fileSelected: (file: 
 			<div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}>
 				<h1 style={{margin: 0}}>Set</h1>
 				<Button style={{...styles.buttonSmall, marginLeft: 30, marginTop: 2}} icon={'bring-data'}
-						onClick={props.fileSelected}>Import</Button>
+						onClick={props.fileSelected}>Import nml</Button>
 			</div>
 	)
 }
