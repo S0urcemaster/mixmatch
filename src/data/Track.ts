@@ -1,5 +1,9 @@
 
-export default class {
+export default class Track {
+	modified_date:string
+	modified_time:string
+	title:string
+	artist:string
 	dir:string
 	file:string
 	volume:string

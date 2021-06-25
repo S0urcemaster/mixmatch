@@ -3,6 +3,7 @@ import React, {useState, useEffect, PropsWithChildren} from 'react';
 import {Cell, Column, Table, Utils} from "@blueprintjs/table";
 
 import styles, {css} from '../styles'
+import Track from "../data/Track";
 
 interface IDJSetTable {
 	columns?: JSX.Element[];
@@ -45,11 +46,31 @@ const DJSET_TABLE_DATA = [
 ].map(([track, clazz, base, interval, chord, extension, complex]) =>
 		({track, clazz, base, interval, chord, extension, complex}));
 
-export default function DJSet(props: PropsWithChildren<any>) {
+export default function DJSet(props: PropsWithChildren<any> & {tracks:Track[]}) {
+
+	const [tracks, setTracks] = useState(props.tracks)
+
+	useEffect(() => {
+		console.log('props.tracks set')
+		console.log('props.tracks: ', props.tracks)
+		console.log('tracks: ', tracks)
+		setTracks(props.tracks)
+	},[props.tracks])
+
+	useEffect(() => {
+		// console.log('tracks: ', props.tracks)
+		console.log('tracks set')
+	},[tracks])
 
 	const getDjsetCellRenderer = (key: string) => {
+		// const trax = tracks.map()
+		// console.log('cell: ', tracks)
 		// @ts-ignore
-		return (row: number) => <Cell><code>{djsetData[row][key]}</code></Cell>;
+		// if(!props.tracks[0]) {
+		// 	console.log(props.tracks)
+		// 	return
+		// }
+		return (row: number) => <Cell><code>{props.tracks[row][key]}</code></Cell>;
 	}
 
 	const handleColumnsReordered = (oldIndex: number, newIndex: number, length: number) => {
@@ -74,13 +95,13 @@ export default function DJSet(props: PropsWithChildren<any>) {
 
 	const djsetColumns = [
 		// these cellRenderers are only created once and then cloned on updates
-		<Column key="1" name="Track" cellRenderer={getDjsetCellRenderer("track")}/>,
-		<Column key="2" name="Class" cellRenderer={getDjsetCellRenderer("clazz")}/>,
-		<Column key="3" name="Base" cellRenderer={getDjsetCellRenderer("base")}/>,
-		<Column key="4" name="Interval" cellRenderer={getDjsetCellRenderer("interval")}/>,
-		<Column key="5" name="Chord" cellRenderer={getDjsetCellRenderer("chord")}/>,
-		<Column key="6" name="Extension" cellRenderer={getDjsetCellRenderer("extension")}/>,
-		<Column key="7" name="Complex" cellRenderer={getDjsetCellRenderer("complex")}/>,
+		<Column key="1" name="Title" cellRenderer={getDjsetCellRenderer("title")}/>,
+		<Column key="2" name="Artist" cellRenderer={getDjsetCellRenderer("artist")}/>,
+		<Column key="3" name="BPM" cellRenderer={getDjsetCellRenderer("bpm")}/>,
+		<Column key="4" name="KEY" cellRenderer={getDjsetCellRenderer("key")}/>,
+		<Column key="5" name="Genre" cellRenderer={getDjsetCellRenderer("genre")}/>,
+		<Column key="6" name="MusKey" cellRenderer={getDjsetCellRenderer("musical_key")}/>,
+		<Column key="7" name="QBPM" cellRenderer={getDjsetCellRenderer("bpm_quality")}/>,
 	]
 
 	useEffect(() => {
@@ -95,18 +116,21 @@ export default function DJSet(props: PropsWithChildren<any>) {
 
 
 	return (
-				<Table
+			<>
+
+			<Table
 						// enableColumnReordering={true}
 						enableColumnResizing={false}
 						enableRowReordering={true}
 						enableRowResizing={false}
-						numRows={djsetData.length}
+						numRows={tracks.length}
 						onColumnsReordered={handleColumnsReordered}
 						onRowsReordered={handleRowsReordered}
 						columnWidths={[300, 70, 70, 70, 70, 70, 70]}
 				>
 					{djsetColumns}
 				</Table>
+			</>
 	)
 
 

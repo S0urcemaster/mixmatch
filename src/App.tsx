@@ -62,6 +62,12 @@ function App() {
 		// console.log(width, height)
 	},[width, height])
 
+	const [tracks, setTracks] = useState([])
+
+	useEffect(() => {
+		console.log('app: ', tracks)
+	},[tracks])
+
 	useEffect(() => {
 		// console.log(window)
 		// console.log(window.myAPI)
@@ -73,15 +79,13 @@ function App() {
 		// window.api.send("toMain", "some data");
 	},[])
 
-	const [tracks, setTracks] = useState([])
-
 	function importSet() {
-		console.log('importSet')
+		// console.log('importSet')
 		window.api.send(com.pick_file, undefined);
 	}
 
 	function filePicked(filename:string) {
-		console.log('file picked: ', filename);
+		// console.log('file picked: ', filename);
 		window.api.send(com.read_nml, filename)
 	}
 
@@ -93,8 +97,12 @@ function App() {
 		const trax = []
 		for(let i = 0; i< entries.length; i++) {
 			const entry = entries.item(i)
-			console.log(entry)
+			// console.log(entry)
 			const track = new Track();
+			track.modified_date = entry.getAttribute('MODIFIED_DATE')
+			track.modified_time = entry.getAttribute('MODIFIED_TIME')
+			track.title = entry.getAttribute('TITLE')
+			track.artist = entry.getAttribute('ARTIST')
 			const location = entry.getElementsByTagName('LOCATION').item(0)
 			track.dir = location.getAttribute('DIR')
 			track.file = location.getAttribute('FILE')
@@ -122,7 +130,8 @@ function App() {
 			trax.push(track)
 			// console.log(dir)
 		}
-		console.log(trax)
+		// console.log(trax)
+		setTracks(trax)
 	}
 
 	return (
@@ -143,7 +152,7 @@ function App() {
 				</div>
 				<div style={{...tableRow}}>
 					<div style={{...tableRowItem, height:height -470, width:0, marginRight:10}}>
-						<DJSet/>
+						<DJSet tracks={tracks}/>
 					</div>
 					<div style={{...tableRowItem, height:height -470, width:0}}>
 						<Collection/>
