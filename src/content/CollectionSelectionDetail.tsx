@@ -6,29 +6,36 @@ import styles, {css} from '../styles'
 import GenreSelect from "../components/GenreSelect";
 import NoteSelect from "../components/NoteSelect";
 import {notes} from "../data/Note";
+import Track from "../data/Track";
 
 const padder:css = {
 	padding:5,
 }
 
-export default function SetSelectionDetail(props: PropsWithChildren<any>) {
+export default function (props: PropsWithChildren<any> & {selected:Track, play:() => void}) {
+
+	const selected = props.selected
+
+	function play() {
+		props.play()
+	}
 
 	return (
 			<Card style={{...props.style, padding:0, width:'100%'}}>
 				<div style={{...padder, display:'flex'}}>
-					<h3 style={{...styles.detailsTitle}}>Someone in the Sky (feat. Sutja Gutierrez) (Periodear Remix)</h3>
-					<Button icon='play'></Button>
+					<h3 style={{...styles.detailsTitle}}>{selected.title}</h3>
+					<Button icon='play' onClick={play} />
 				</div>
 				<Divider style={{margin: 0}}/>
 				<table style={{...padder}} className='tagVerticalTable'>
 					<tbody>
 					<tr>
 						<td>Artist</td>
-						<td>Affkt, Sutja Gutierrez</td>
+						<td>{selected.artist}</td>
 					</tr>
 					<tr>
 						<td>Album</td>
-						<td>Mistura - Do You Love Me? Feat. Angela Johnson (David Penn Remix)</td>
+						<td>{selected.album}</td>
 					</tr>
 					</tbody>
 				</table>
@@ -42,11 +49,11 @@ export default function SetSelectionDetail(props: PropsWithChildren<any>) {
 						<td>Mood</td>
 					</tr>
 					<tr>
-						<td>123</td>
-						<td>10:00</td>
-						<td>C#m</td>
-						<td><GenreSelect></GenreSelect></td>
-						<td>Techno (Peak Time / Driving / Hard)</td>
+						<td>{selected.bpm}</td>
+						<td>{selected.playtime}</td>
+						<td>{selected.initial_key}</td>
+						<td>{selected.genre}</td>
+						<td>{selected.mood}</td>
 					</tr>
 					<tr>
 					</tr>

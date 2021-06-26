@@ -15,7 +15,7 @@
 html {
 	box-sizing: border-box;
 	margin: 2vh 2vw 4vh 2vw;
-	height: calc(100vh - 5vh);
+	height: calc(100vh - 6vh);
 }
 
 body {

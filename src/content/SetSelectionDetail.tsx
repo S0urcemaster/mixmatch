@@ -14,13 +14,17 @@ const padder:css = {
 	padding:5,
 }
 
-export default function SetSelectionDetail(props: PropsWithChildren<any>) {
+export default function (props: PropsWithChildren<any> & {play:() => void}) {
+
+	function play() {
+		props.play()
+	}
 
 	return (
 			<Card style={{...props.style, padding:0, width:'100%'}}>
 				<div style={{...padder, display:'flex'}}>
 					<h3 style={{...styles.detailsTitle}}>Let's Prance (Radio Slave & Thomas Gandey Last Communication Remix)</h3>
-					<Button icon='play'/>
+					<Button icon='play' onClick={play}/>
 				</div>
 				<Divider style={{margin: 0}}/>
 				<table style={{...padder}} className='tagVerticalTable'>

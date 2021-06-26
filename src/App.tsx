@@ -11,7 +11,7 @@ import styles, {css} from './styles'
 import { useWindowSize } from './lib/WindowSizeHook'
 
 import com from './main/processcom'
-import Track from "./data/Track";
+import Track from "./data/Track"
 
 import DJSet from "./content/DJSet";
 import Collection from "./content/Collection"
@@ -28,7 +28,7 @@ const app:css = {
 	maxHeight:'84vh',
 	height:'84vh',
 	// width:'94vw',
-	boxSizing:'border-box',
+	// boxSizing:'border-box',
 	// overflow:'unset',
 	// paddingBottom:10,
 }
@@ -57,26 +57,27 @@ declare const window: any;
 function App() {
 
 	const [width, height] = useWindowSize();
+	const audio = new AudioContext();
 
 	useEffect(() => {
 		// console.log(width, height)
 	},[width, height])
 
-	const [tracks, setTracks] = useState([])
+	const [zet, setZet] = useState([])
+	const [collection, setCollection] = useState([])
+	const [selectedCollectionTrack, setSelectedCollectionTrack] = useState(new Track())
+	const [currentPlay, setCurrentPlay] = useState(null)
 
 	useEffect(() => {
-		console.log('app: ', tracks)
-	},[tracks])
+		// console.log('app: ', tracks)
+	},[zet])
 
 	useEffect(() => {
-		// console.log(window)
-		// console.log(window.myAPI)
-		// window.api.receive("fromMain", (data: any) => {
-		// 	console.log(`Received ${data} from main process`);
-		// });
-		window.api.receive(com.pick_file, (data: string) => filePicked(data));
-		window.api.receive(com.read_nml, (data: string) => fileRead(data));
-		// window.api.send("toMain", "some data");
+		window.api.receive(com.pick_file, (data: string) => filePicked(data))
+		window.api.receive(com.read_nml, (data: string) => fileRed(data))
+		window.api.receive(com.read_collection, (data: []) => collectionRed(data))
+		window.api.receive(com.read_mp3, (data: Buffer) => mp3Red(data))
+		window.api.send(com.read_collection, undefined)
 	},[])
 
 	function importSet() {
@@ -84,12 +85,36 @@ function App() {
 		window.api.send(com.pick_file, undefined);
 	}
 
+	function collectionRed(data: []) {
+		// console.log('collection read', data)
+		setCollection(data.pop())
+	}
+
 	function filePicked(filename:string) {
 		// console.log('file picked: ', filename);
 		window.api.send(com.read_nml, filename)
 	}
 
-	function fileRead(data:any) {
+	function mp3Red(data:Buffer) {
+		setCurrentPlay(data)
+		const source = audio.createBufferSource(); // Create sound source
+		audio.decodeAudioData(currentPlay, function(buffer){ // Create source buffer from raw binary
+			source.buffer = buffer; // Add buffered data to object
+			source.connect(audio.destination); // Connect sound source to output
+			source.start(audio.currentTime); // play the source immediately
+		});
+	}
+
+	function collectionTrackSelected(track:Track) {
+		setSelectedCollectionTrack(track)
+	}
+
+	function playCollection() {
+		console.log('play')
+		window.api.send(com.read_mp3, selectedCollectionTrack.file)
+	}
+
+	function fileRed(data:any) {
 		// console.log('fileRead: ', data)
 		const parser = new DOMParser()
 		const doc = parser.parseFromString(data, "application/xml");
@@ -131,7 +156,7 @@ function App() {
 			// console.log(dir)
 		}
 		// console.log(trax)
-		setTracks(trax)
+		setZet(trax)
 	}
 
 	return (
@@ -144,18 +169,16 @@ function App() {
 				</div>
 				<div style={{...detailsRow}}>
 					<SetSelectionDetail style={{marginRight:10, marginBottom:10}}/>
-					<CollectionSelectionDetail style={{marginBottom:10}}/>
-				</div>
-				<div style={{...detailsRow}}>
-					<SetActions style={{marginRight:10}}/>
-					<CollectionActions style={{}}/>
+					<CollectionSelectionDetail style={{marginBottom:10}} selected={selectedCollectionTrack}
+														play={playCollection}/>
 				</div>
 				<div style={{...tableRow}}>
 					<div style={{...tableRowItem, height:height -470, width:0, marginRight:10}}>
-						<DJSet tracks={tracks}/>
+						<DJSet tracks={zet}/>
 					</div>
-					<div style={{...tableRowItem, height:height -470, width:0}}>
-						<Collection/>
+					<div style={{...tableRowItem, width:0}}>
+						<Collection tracks={collection} height={height -430}
+										collectionTrackSelected={collectionTrackSelected} />
 					</div>
 				</div>
 			</div>

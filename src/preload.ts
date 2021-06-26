@@ -7,14 +7,14 @@ contextBridge.exposeInMainWorld(
 		"api", {
 			send: (channel: string, data: any) => {
 				// whitelist channels
-				const validChannels = [com.pick_file, com.read_nml]
+				const validChannels = [com.pick_file, com.read_nml, com.read_collection, com.read_mp3]
 				if (validChannels.includes(channel)) {
 					console.log('bridge send: ', channel, data)
 					ipcRenderer.send(channel, data)
 				}
 			},
 			receive: (channel: string, func: (arg0: any) => void) => {
-				const validChannels = [com.pick_file, com.read_nml]
+				const validChannels = [com.pick_file, com.read_nml, com.read_collection, com.read_mp3]
 				if (validChannels.includes(channel)) {
 					console.log('bridge receive: ', channel, func)
 					// Deliberately strip event as it includes `sender`

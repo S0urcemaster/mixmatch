@@ -20,7 +20,7 @@ const createWindow = (): void => {
 	const preload = path.join(__dirname, '../renderer/main_window', "preload.js")
 
 	mainWindow = new BrowserWindow({
-		show: false,
+		// show: false,
 		webPreferences: {
 			enableRemoteModule: false, // turn off remote
 			// nodeIntegration: false, // is default value after Electron v5

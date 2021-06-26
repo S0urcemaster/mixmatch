@@ -1,29 +1,35 @@
-import React, {PropsWithChildren} from 'react';
+import React, {PropsWithChildren} from 'react'
 
-import { Card, Divider, Button } from "@blueprintjs/core";
+import { Alignment, Button, ButtonGroup, H5, IconName } from "@blueprintjs/core"
+import { Popover2 } from "@blueprintjs/popover2"
 
 import { notes } from '../data/Note'
 import styles, {css} from '../styles'
 
 import '../App.css'
+import FilterMenu from "./FilterMenu";
 
 const padder:css = {
 	padding:5,
 }
 
+function renderButton(text: string, iconName: IconName) {
+	return (
+			<Popover2 content={<FilterMenu />} placement="bottom-start">
+				<Button rightIcon="caret-down" icon={iconName} text={text} />
+			</Popover2>
+	);
+}
 // eslint-disable-next-line import/no-anonymous-default-export
 export default function (props: PropsWithChildren<any>) {
 
 	return (
-			<Card style={{...props.style, padding:0, width:'100%'}}>
-				<div style={{...padder, display:'flex', flexWrap:'wrap', gap:'10px'}}>
-					<Button>Filter</Button>
-					<Button>Sort</Button>
-					<Divider style={{margin: 0}}/>
-					<Button>Action 2</Button>
-					<Button>Action 3</Button>
-					<Button>Action 4</Button>
-				</div>
-			</Card>
+			<div style={{backgroundColor:'white'}}>
+				<ButtonGroup style={{ minWidth: 120 }}>
+					{renderButton("Filter", "document")}
+					{renderButton("Sort", "edit")}
+					{renderButton("View", "eye-open")}
+				</ButtonGroup>
+			</div>
 	)
 }
