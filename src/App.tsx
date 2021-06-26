@@ -57,7 +57,7 @@ declare const window: any;
 function App() {
 
 	const [width, height] = useWindowSize();
-	const audio = new AudioContext();
+	const audioCtx = new AudioContext();
 
 	useEffect(() => {
 		// console.log(width, height)
@@ -67,6 +67,7 @@ function App() {
 	const [collection, setCollection] = useState([])
 	const [selectedCollectionTrack, setSelectedCollectionTrack] = useState(new Track())
 	const [currentPlay, setCurrentPlay] = useState(null)
+	const source:AudioBufferSourceNode = audioCtx.createBufferSource()
 
 	useEffect(() => {
 		// console.log('app: ', tracks)
@@ -76,7 +77,7 @@ function App() {
 		window.api.receive(com.pick_file, (data: string) => filePicked(data))
 		window.api.receive(com.read_nml, (data: string) => fileRed(data))
 		window.api.receive(com.read_collection, (data: []) => collectionRed(data))
-		window.api.receive(com.read_mp3, (data: Buffer) => mp3Red(data))
+		window.api.receive(com.read_mp3, (data:any) => mp3Red(data.pop()))
 		window.api.send(com.read_collection, undefined)
 	},[])
 
@@ -95,23 +96,34 @@ function App() {
 		window.api.send(com.read_nml, filename)
 	}
 
-	function mp3Red(data:Buffer) {
-		setCurrentPlay(data)
-		const source = audio.createBufferSource(); // Create sound source
-		audio.decodeAudioData(currentPlay, function(buffer){ // Create source buffer from raw binary
+	const mp3Red = (data:ArrayBuffer) => {
+		console.log(data)
+		// console.log('mp3Red', data)
+		// setCurrentPlay(data)
+		// source = audioCtx.createBufferSource() // Create sound source
+		// console.log(source)
+		// // const arrayBuffer = Uint8Array.from(data[0]).buffer
+		// console.log(data)
+		audioCtx.decodeAudioData(data, function(buffer){ // Create source buffer from raw binary
 			source.buffer = buffer; // Add buffered data to object
-			source.connect(audio.destination); // Connect sound source to output
-			source.start(audio.currentTime); // play the source immediately
-		});
+			source.connect(audioCtx.destination); // Connect sound source to output
+					source.start(audioCtx.currentTime); // play the source immediately
+		},
+				function(e) {
+			console.log("Error with decoding audio data" + e.message)
+		})
+		console.log(source.buffer.length)
 	}
 
 	function collectionTrackSelected(track:Track) {
 		setSelectedCollectionTrack(track)
+		console.log(track.file)
+		window.api.send(com.read_mp3, track.file)
 	}
 
 	function playCollection() {
-		console.log('play')
-		window.api.send(com.read_mp3, selectedCollectionTrack.file)
+		console.log('play', source.buffer.length)
+		source.start(audioCtx.currentTime); // play the source immediately
 	}
 
 	function fileRed(data:any) {

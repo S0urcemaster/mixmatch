@@ -10,7 +10,7 @@ import com from './processcom'
 import Track from "../data/Track";
 
 ipcMain.on(com.read_collection, function () {
-	console.log('file: ', com.read_collection)
+	// console.log('file: ', com.read_collection)
 	glob( 'c:/tracks/2016 - 1/*.mp3', function( err, files ) {
 		// console.log( files );
 		const trax:Track[] = []
@@ -49,11 +49,17 @@ ipcMain.on(com.pick_file, function () {
 })
 
 ipcMain.on(com.read_nml, function (event, filename) {
+	const reader = new FileReader();
+	reader.onload = function(evt) {
+		mainWindow.webContents.send(com.read_mp3, evt.target.result);
+	};
+	filename = "C:\\tracks\\my\\15 live1.wav"
+	reader.readAsArrayBuffer(filename);
 	// console.log(filename[0])
-	fs.readFile(filename[0], (err, data) => {
-		// console.log('read: ', data.toString())
-		mainWindow.webContents.send(com.read_nml, data.toString());
-	})
+	// fs.readFile(filename[0], (err, data) => {
+	// 	// console.log('read: ', data.toString())
+	// 	mainWindow.webContents.send(com.read_nml, data.toString());
+	// })
 	// mainWindow.loadFile(filename).then((file) => {
 	// 	const parser = new DOMParser();
 	// 	const doc = parser.parseFromString(file, "application/xml");
@@ -70,10 +76,10 @@ ipcMain.on(com.read_nml, function (event, filename) {
 })
 
 ipcMain.on(com.read_mp3, function (event, filename) {
-	// console.log(filename[0])
+	console.log(com.read_mp3, filename)
 	fs.readFile(filename, (err, data) => {
-		// console.log('read: ', data)
-		mainWindow.webContents.send(com.read_mp3, data);
+		console.log('read: ', data.buffer)
+		mainWindow.webContents.send(com.read_mp3, data.buffer);
 	})
 })
 
