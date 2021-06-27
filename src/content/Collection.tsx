@@ -16,15 +16,15 @@ export default function DJSet(props: PropsWithChildren<any> &
 		setTracks(props.tracks)
 	},[props.tracks])
 
-	function trackSelected(track:Track) {
-		props.collectionTrackSelected(track)
-	}
+	// function trackSelected(track:Track) {
+	// 	props.collectionTrackSelected(track)
+	// }
 
 	return (
 			<div>
 				<CollectionActions style={{}}/>
 				<div style={{overflowY:'auto', height:props.height}}>
-					<TrackList tracks={tracks} selected={trackSelected} />
+					<TrackList tracks={tracks} selected={(track:Track) => props.collectionTrackSelected(track)} />
 				</div>
 			</div>
 	)

@@ -49,17 +49,11 @@ ipcMain.on(com.pick_file, function () {
 })
 
 ipcMain.on(com.read_nml, function (event, filename) {
-	const reader = new FileReader();
-	reader.onload = function(evt) {
-		mainWindow.webContents.send(com.read_mp3, evt.target.result);
-	};
-	filename = "C:\\tracks\\my\\15 live1.wav"
-	reader.readAsArrayBuffer(filename);
 	// console.log(filename[0])
-	// fs.readFile(filename[0], (err, data) => {
-	// 	// console.log('read: ', data.toString())
-	// 	mainWindow.webContents.send(com.read_nml, data.toString());
-	// })
+	fs.readFile(filename[0], (err, data) => {
+		// console.log('read: ', data.toString())
+		mainWindow.webContents.send(com.read_nml, data.toString());
+	})
 	// mainWindow.loadFile(filename).then((file) => {
 	// 	const parser = new DOMParser();
 	// 	const doc = parser.parseFromString(file, "application/xml");

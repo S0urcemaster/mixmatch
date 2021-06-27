@@ -1,4 +1,4 @@
-import React, {PropsWithChildren} from 'react'
+import React, {PropsWithChildren, useEffect} from 'react'
 
 import { Card, Divider, Button, Spinner } from "@blueprintjs/core"
 
@@ -11,7 +11,7 @@ const padder:css = {
 }
 
 export default function (props: PropsWithChildren<any> & {
-	selected:Track, play:() => void, playing:boolean, loading:boolean}) {
+	track:Track, play:() => void, playing:boolean, loading:boolean}) {
 
 	function play() {
 		props.play()
@@ -20,7 +20,7 @@ export default function (props: PropsWithChildren<any> & {
 	return (
 			<Card style={{...props.style, padding:0, width:'100%'}}>
 				<div style={{...padder, display:'flex'}}>
-					<h3 style={{...styles.detailsTitle}}>{props.selected.title}</h3>
+					<h3 style={{...styles.detailsTitle}}>{props.track.title}</h3>
 					{/*<Button icon={<Spinner />} onClick={play} />*/}
 					<Button icon={props.loading ? <Spinner size={15} /> : props.playing ? 'pause' :'play'} onClick={play} />
 				</div>
@@ -29,11 +29,11 @@ export default function (props: PropsWithChildren<any> & {
 					<tbody>
 					<tr>
 						<td>Artist</td>
-						<td>{props.selected.artist}</td>
+						<td>{props.track.artist}</td>
 					</tr>
 					<tr>
 						<td>Album</td>
-						<td>{props.selected.album}</td>
+						<td>{props.track.album}</td>
 					</tr>
 					</tbody>
 				</table>
@@ -47,18 +47,18 @@ export default function (props: PropsWithChildren<any> & {
 						<td>Mood</td>
 					</tr>
 					<tr>
-						<td>{props.selected.bpm}</td>
-						<td>{props.selected.playtime}</td>
-						<td>{props.selected.initial_key}</td>
-						<td>{props.selected.genre}</td>
-						<td>{props.selected.mood}</td>
+						<td>{props.track.bpm}</td>
+						<td>{props.track.playtime}</td>
+						<td>{props.track.initial_key}</td>
+						<td>{props.track.genre}</td>
+						<td>{props.track.mood}</td>
 					</tr>
 					<tr>
 					</tr>
 					</tbody>
 				</table>
 				<Divider style={{margin: 0}} />
-				<Player track={props.selected} />
+				<Player track={props.track} />
 			</Card>
 	)
 }
