@@ -15,10 +15,9 @@ import Track from "./data/Track"
 
 import DJSet from "./content/DJSet";
 import Collection from "./content/Collection"
-import SetSelectionDetail from "./content/SetSelectionDetail"
 import TrackDetail from "./content/TrackDetail"
 import PageHeader from "./content/PageHeader";
-import SetHeader from "./content/SetHeader";
+import SetHeader from "./content/DJSetHeader";
 import CollectionHeader from "./content/CollectionHeader";
 
 
@@ -46,11 +45,10 @@ const tableRowItem:css = {
 	flex:'1 1 auto',
 	// width:'100%',
 }
+
 declare const window: any;
 
-
-const zetNode:AudioBufferSourceNode = null
-
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 function App() {
 
 	const [width, height] = useWindowSize();
@@ -61,7 +59,8 @@ function App() {
 
 	const [zet, setZet] = useState([])
 	const [collection, setCollection] = useState([])
-	const [selectedCollectionTrack, setSelectedCollectionTrack] = useState({})
+	const [selectedCollectionTrack, setSelectedCollectionTrack] = useState({...new Track(), title:'No Track'})
+	const [selectedZetTrack, setSelectedZetTrack] = useState({...new Track(), title:'No Track'})
 
 	useEffect(() => {
 		// console.log('app: ', tracks)
@@ -84,10 +83,6 @@ function App() {
 
 	function filePicked(filename:string) {
 		window.api.send(com.read_nml, filename)
-	}
-
-	function collectionTrackSelected(track:Track) {
-		setSelectedCollectionTrack(track)
 	}
 
 	function fileRed(data:any) {
@@ -144,17 +139,16 @@ function App() {
 					<CollectionHeader />
 				</div>
 				<div style={{...detailsRow}}>
-					<SetSelectionDetail style={{marginRight:10, marginBottom:10}}/>
-					<TrackDetail style={{marginBottom:10}} track={selectedCollectionTrack}
-					/>
+					<TrackDetail style={{marginRight:10, marginBottom:10}} track={selectedZetTrack} />
+					<TrackDetail style={{marginBottom:10}} track={selectedCollectionTrack} />
 				</div>
 				<div style={{...tableRow}}>
 					<div style={{...tableRowItem, height:height -470, width:0, marginRight:10}}>
-						<DJSet tracks={zet}/>
+						<DJSet tracks={zet} trackSelected={(track:Track) => setSelectedZetTrack(track)} />
 					</div>
 					<div style={{...tableRowItem, width:0}}>
 						<Collection tracks={collection} height={height -430}
-										collectionTrackSelected={collectionTrackSelected} />
+										trackSelected={(track:Track) => setSelectedCollectionTrack(track)} />
 					</div>
 				</div>
 			</div>

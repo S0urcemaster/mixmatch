@@ -6,8 +6,8 @@ import TrackList from "../components/TrackList";
 import CollectionActions from "./CollectionActions";
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-export default function DJSet(props: PropsWithChildren<any> &
-		{tracks:Track[], collectionTrackSelected:(track:Track) => void}) {
+export default function Collection(props: PropsWithChildren<any> &
+		{tracks:Track[], trackSelected:(track:Track) => void}) {
 
 	const [tracks, setTracks] = useState(props.tracks)
 
@@ -24,7 +24,7 @@ export default function DJSet(props: PropsWithChildren<any> &
 			<div>
 				<CollectionActions style={{}}/>
 				<div style={{overflowY:'auto', height:props.height}}>
-					<TrackList tracks={tracks} selected={(track:Track) => props.collectionTrackSelected(track)} />
+					<TrackList tracks={tracks} selected={(track:Track) => props.trackSelected(track)} />
 				</div>
 			</div>
 	)

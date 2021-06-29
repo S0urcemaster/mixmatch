@@ -14,10 +14,6 @@ const padder:css = {
 export default function (props: PropsWithChildren<any> & {
 	track:Track, play:() => void, playing:boolean, loading:boolean}) {
 
-	function play() {
-		props.play()
-	}
-
 	return (
 			<Card style={{...props.style, padding:0, width:'100%'}}>
 				<div style={{...padder, display:'flex'}}>

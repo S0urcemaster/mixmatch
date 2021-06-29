@@ -13,24 +13,24 @@ const padder: css = {
 	padding: 5,
 }
 
-const audioCtx = new AudioContext();
-let audioBuffer:AudioBuffer = null
-let audioNode:AudioBufferSourceNode = null
-const audioGainNode = audioCtx.createGain()
-audioGainNode.gain.value = 1
-
-const oscGainNode = audioCtx.createGain()
-oscGainNode.gain.value = 1
-
-const oscs:OscillatorNode[] = []
+const audioCtx = new AudioContext()
 
 export default function (props: PropsWithChildren<any> & {
 	track:Track, audioCtx:AudioContext
 }) {
-
-	useEffect(() => {
-		window.api.receive(com.read_mp3, (data:any) => mp3Red(data.pop()))
-	},[])
+	
+	// keep in memory after decoding:
+	const [audioBuffer, setAudioBuffer] = useState(null)
+	
+	// start and later stop
+	const [audioNode, setAudioNode] = useState(null)
+	
+	// never changes
+	const [audioGainNode] = useState(audioCtx.createGain())
+	const [oscGainNode] = useState(audioCtx.createGain())
+	
+	const [oscs, setOscs] = useState([])
+	const [tempOsc, setTempOsc] = useState(null)
 
 	const [audioGain, setAudioGain] = useState(100)
 	const [audioLength, setAudioLength] = useState(300)
@@ -38,26 +38,73 @@ export default function (props: PropsWithChildren<any> & {
 	const [audioPlaying, setAudioPlaying] = useState(false)
 	const [audioLoading, setAudioLoading] = useState(false)
 	const [oscPlaying, setOscPlaying] = useState(false)
-	const [oscGain, setOscGain] = useState(100)
+	const [oscGain, setOscGain] = useState(50)
 	const [octave, setOctave] = useState(4)
 	const [oscFreqs, setOscFreqs] = useState([])
-
+	const [tempFreq, setTempFreq] = useState(undefined)
+	
 	useEffect(() => {
-		if(props.track && props.track.title) {
-			setAudioLoading(true)
-			audioStop()
+		window.api.receive(com.read_mp3, (data:any) => mp3Red(data.pop()))
+		oscGainNode.connect(audioCtx.destination)
+		audioGainNode.connect(audioCtx.destination)
+	},[])
+	
+	useEffect(() => {
+		if(audioNode) {
+			audioNode.buffer = audioBuffer
+			audioNode.connect(audioGainNode)
+			if(!audioPlaying) {
+				console.log('audio', audioPlaying, audioNode)
+				audioNode.start(0, playRange[0])
+				setAudioPlaying(true)
+			}
+		}
+	},[audioNode])
+	
+	useEffect(() => {
+		if(tempOsc) {
+			tempOsc.connect(oscGainNode)
+			tempOsc.type = 'sine'
+			tempOsc.frequency.setValueAtTime(tempFreq, audioCtx.currentTime)
+			tempOsc.start()
+		}
+	},[tempOsc])
+	
+	useEffect(() => {
+		if(props.track && props.track.file) {
+			if(audioNode) {
+				audioStop()
+			}
 			setAudioLoading(true)
 			window.api.send(com.read_mp3, props.track.file)
 		}
 	}, [props.track])
 
 	useEffect(() => {
+		if(tempFreq) {
+			setTempOsc(audioCtx.createOscillator())
+		}
+		else {
+			if(tempOsc) {
+				tempOsc.stop()
+				tempOsc.disconnect()
+			}
+		}
+	}, [tempFreq])
+
+	useEffect(() => {
 		audioGainNode.gain.setValueAtTime(audioGain /100, 0)
 	},[audioGain])
 
 	useEffect(() => {
-		audioStop()
-		if(!audioLoading) audioPlay(playRange[0])
+		if(playRange[0] >0) {
+			if(audioNode) {
+				audioStop()
+			}
+			if(!audioLoading) {
+				audioPlay()
+			}
+		}
 	},[playRange])
 
 	useEffect(() => {
@@ -68,9 +115,8 @@ export default function (props: PropsWithChildren<any> & {
 		if(audioNode) {
 			audioNode.disconnect()
 		}
-		console.log(data)
 		audioCtx.decodeAudioData(data).then((buffer) => {
-			audioBuffer = buffer
+			setAudioBuffer(buffer)
 			const length = +(buffer.duration.toPrecision(2))
 			setAudioLength(length)
 			setPlayRange([playRange[0], length])
@@ -86,23 +132,18 @@ export default function (props: PropsWithChildren<any> & {
 				audioStop()
 			}
 			else {
-				audioPlay(playRange[0])
+				audioPlay()
 			}
 	}
 
-	function audioPlay(seconds:number) {
-		setAudioPlaying(true)
-		audioNode = audioCtx.createBufferSource()
-		audioNode.buffer = audioBuffer
-		audioNode.connect(audioGainNode)
-		audioGainNode.connect(audioCtx.destination)
-		audioNode.start(0, seconds)
+	function audioPlay() {
+		setAudioNode(audioCtx.createBufferSource())
 	}
 
 	function audioStop() {
-		setAudioPlaying(false)
-		if(audioNode) {
+		if(audioPlaying) {
 			audioNode.stop(audioCtx.currentTime)
+			setAudioPlaying(false)
 			audioNode.disconnect()
 		}
 	}
@@ -116,17 +157,16 @@ export default function (props: PropsWithChildren<any> & {
 			osc.type = 'sine'
 			osc.frequency.setValueAtTime(freq, audioCtx.currentTime)
 			osc.connect(oscGainNode)
-			oscGainNode.connect(audioCtx.destination)
 			osc.start()
 		})
 	}
 
 	function oscStop() {
-		setOscPlaying(false)
 		oscs.forEach(osc => {
 			osc.stop(audioCtx.currentTime)
 			osc.disconnect()
 		})
+		setOscPlaying(false)
 	}
 
 	const oscToggle = () => {
@@ -155,7 +195,7 @@ export default function (props: PropsWithChildren<any> & {
 				</div>
 				<Divider/>
 				<div style={{...padder, display: 'flex', justifyContent:'space-between'}}>
-					<Keys octave={octave} activeFrequencies={(fs:[]) => setOscFreqs(fs)} />
+					<Keys octave={octave} activeFrequencies={(fs:[]) => setOscFreqs(fs)} tempFrequency={(f:number) => setTempFreq(f)} />
 					<div style={{display: 'flex', justifyContent:'space-between'}}>
 						<div style={{paddingLeft:10, paddingRight:20}}>
 							<Slider value={oscGain} min={0} max={100} labelStepSize={10}
