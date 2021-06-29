@@ -20,4 +20,8 @@ export const notes:INote[] = [
 	{name:'-', value:13}
 ]
 
+// export const notes = {c:1, cis:2, d:3, dis:4, e:5, f:6, fis:7, g:8, gis:9, a:10, ais:11, b:12}
 
+export default class Keyboard {
+	notes = [8][12]
+}

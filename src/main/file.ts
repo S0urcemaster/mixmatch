@@ -39,10 +39,9 @@ ipcMain.on(com.pick_file, function () {
 	dialog.showOpenDialog(mainWindow, {
 		properties: ['openFile']
 	}).then(result => {
-		mainWindow.webContents.send(com.pick_file, result.filePaths[0]);
-		// console.log('dialog result')
-		// console.log(result.canceled)
-		// console.log(result.filePaths)
+		if(result.filePaths[0]) {
+			mainWindow.webContents.send(com.pick_file, result.filePaths[0]);
+		}
 	}).catch(err => {
 		console.log(err)
 	})

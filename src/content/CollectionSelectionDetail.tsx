@@ -21,8 +21,6 @@ export default function (props: PropsWithChildren<any> & {
 			<Card style={{...props.style, padding:0, width:'100%'}}>
 				<div style={{...padder, display:'flex'}}>
 					<h3 style={{...styles.detailsTitle}}>{props.selected.title}</h3>
-					{/*<Button icon={<Spinner />} onClick={play} />*/}
-					<Button icon={props.loading ? <Spinner size={15} /> : props.playing ? 'pause' :'play'} onClick={play} />
 				</div>
 				<Divider style={{margin: 0}}/>
 				<table style={{...padder}} className='tagVerticalTable'>

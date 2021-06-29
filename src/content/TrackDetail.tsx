@@ -5,6 +5,7 @@ import { Card, Divider, Button, Spinner } from "@blueprintjs/core"
 import styles, {css} from '../styles'
 import Player from "../components/Player"
 import Track from "../data/Track"
+import GenreSelect from "../components/GenreSelect";
 
 const padder:css = {
 	padding:5,
@@ -21,9 +22,7 @@ export default function (props: PropsWithChildren<any> & {
 			<Card style={{...props.style, padding:0, width:'100%'}}>
 				<div style={{...padder, display:'flex'}}>
 					<h3 style={{...styles.detailsTitle}}>{props.track.title}</h3>
-					{/*<Button icon={<Spinner />} onClick={play} />*/}
-					<Button icon={props.loading ? <Spinner size={15} /> : props.playing ? 'pause' :'play'} onClick={play} />
-				</div>
+					</div>
 				<Divider style={{margin: 0}}/>
 				<table style={{...padder}} className='tagVerticalTable'>
 					<tbody>
@@ -41,17 +40,15 @@ export default function (props: PropsWithChildren<any> & {
 					<tbody>
 					<tr>
 						<td>BPM</td>
-						<td>Length</td>
 						<td>Key</td>
+						<td>Length</td>
 						<td>Genre</td>
-						<td>Mood</td>
 					</tr>
 					<tr>
 						<td>{props.track.bpm}</td>
-						<td>{props.track.playtime}</td>
 						<td>{props.track.initial_key}</td>
-						<td>{props.track.genre}</td>
-						<td>{props.track.mood}</td>
+						<td>{props.track.playtime}</td>
+						<td><GenreSelect/></td>
 					</tr>
 					<tr>
 					</tr>
