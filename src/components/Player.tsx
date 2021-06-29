@@ -1,6 +1,6 @@
-import React, {PropsWithChildren, useState, useEffect} from 'react';
+import React, { PropsWithChildren, useState, useEffect } from 'react';
 
-import { Divider, Button, Slider, RangeSlider, NumberRange, Spinner, Colors } from "@blueprintjs/core";
+import { Divider, Button, Slider, RangeSlider, NumberRange, Spinner, HTMLSelect } from "@blueprintjs/core";
 
 import styles, {css} from '../styles'
 import Track from "../data/Track"
@@ -16,7 +16,7 @@ const padder: css = {
 const audioCtx = new AudioContext()
 
 export default function (props: PropsWithChildren<any> & {
-	track:Track, audioCtx:AudioContext
+	track:Track, audioCtx:AudioContext, loadChannel:string
 }) {
 	
 	// keep in memory after decoding:
@@ -43,8 +43,11 @@ export default function (props: PropsWithChildren<any> & {
 	const [oscFreqs, setOscFreqs] = useState([])
 	const [tempFreq, setTempFreq] = useState(undefined)
 	
+	// the actual match value between two tracks
+	const [match, setMatch] = useState('?')
+	
 	useEffect(() => {
-		window.api.receive(com.read_mp3, (data:any) => mp3Red(data.pop()))
+		window.api.receive(com.read_mp3 +props.loadChannel, (data:any) => mp3Red(data.pop()))
 		oscGainNode.connect(audioCtx.destination)
 		audioGainNode.connect(audioCtx.destination)
 	},[])
@@ -54,7 +57,6 @@ export default function (props: PropsWithChildren<any> & {
 			audioNode.buffer = audioBuffer
 			audioNode.connect(audioGainNode)
 			if(!audioPlaying) {
-				console.log('audio', audioPlaying, audioNode)
 				audioNode.start(0, playRange[0])
 				setAudioPlaying(true)
 			}
@@ -76,7 +78,7 @@ export default function (props: PropsWithChildren<any> & {
 				audioStop()
 			}
 			setAudioLoading(true)
-			window.api.send(com.read_mp3, props.track.file)
+			window.api.send(com.read_mp3 +props.loadChannel, props.track.file)
 		}
 	}, [props.track])
 
@@ -112,6 +114,7 @@ export default function (props: PropsWithChildren<any> & {
 	},[oscGain])
 
 	const mp3Red = (data:ArrayBuffer) => {
+		console.log('mp3red')
 		if(audioNode) {
 			audioNode.disconnect()
 		}
@@ -150,7 +153,6 @@ export default function (props: PropsWithChildren<any> & {
 
 	function oscPlay() {
 		setOscPlaying(true)
-		console.log('freqs', oscFreqs)
 		oscFreqs.forEach((freq:number) => {
 			const osc = audioCtx.createOscillator()
 			oscs.push(osc)
@@ -196,7 +198,7 @@ export default function (props: PropsWithChildren<any> & {
 				<Divider/>
 				<div style={{...padder, display: 'flex', justifyContent:'space-between'}}>
 					<Keys octave={octave} activeFrequencies={(fs:[]) => setOscFreqs(fs)} tempFrequency={(f:number) => setTempFreq(f)} />
-					<div style={{display: 'flex', justifyContent:'space-between'}}>
+					<div style={{display: 'flex', justifyContent:'stretch'}}>
 						<div style={{paddingLeft:10, paddingRight:20}}>
 							<Slider value={oscGain} min={0} max={100} labelStepSize={10}
 									onChange={(value) => setOscGain(value)}
@@ -205,8 +207,24 @@ export default function (props: PropsWithChildren<any> & {
 									onChange={(value) => setOctave(value)}
 							/>
 						</div>
-						<Button icon={oscPlaying ? 'pause' :'play'}
-								onClick={oscToggle} style={{width:50}} />
+						<div style={{display:'flex', flexDirection:'column'}}>
+							<Button icon={oscPlaying ? 'pause' :'play'}
+									  onClick={oscToggle} style={{width:50, height:'100%'}} />
+							<div style={{height:20}} />
+							<HTMLSelect value={match} onChange={(event: React.ChangeEvent<HTMLSelectElement>):void => setMatch(event.target.value)} style={{width:50, height:35}}>
+								<option>1.0</option>
+								<option>0.9</option>
+								<option>0.8</option>
+								<option>0.7</option>
+								<option>0.6</option>
+								<option>0.5</option>
+								<option>0.4</option>
+								<option>0.3</option>
+								<option>0.2</option>
+								<option>0.1</option>
+								<option>0</option>
+							</HTMLSelect>
+						</div>
 					</div>
 				</div>
 			</div>

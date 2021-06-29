@@ -12,13 +12,8 @@ export default function Collection(props: PropsWithChildren<any> &
 	const [tracks, setTracks] = useState(props.tracks)
 
 	useEffect(() => {
-		// console.log('collection: ', props.tracks)
 		setTracks(props.tracks)
 	},[props.tracks])
-
-	// function trackSelected(track:Track) {
-	// 	props.collectionTrackSelected(track)
-	// }
 
 	return (
 			<div>

@@ -1,5 +1,7 @@
+import Match from './Match'
 
 export default class Track {
+	id:number
 	modified_date:string
 	modified_time:string
 	title:string
@@ -23,5 +25,8 @@ export default class Track {
 	perceived_db:string
 	analyzed_db:string
 	musical_key:string
-
+	
+	matches:Match[] = []
+	
+	
 }

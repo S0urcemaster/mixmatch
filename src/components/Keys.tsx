@@ -23,33 +23,6 @@ const noteSpacer: css = {
 const keySelectedColor = Colors.GRAY4
 const keyColor = Colors.LIGHT_GRAY2
 
-interface KeysValues {
-	c1: boolean,
-	cis1: boolean,
-	d1: boolean,
-	dis1: boolean,
-	e1: boolean,
-	f1: boolean,
-	fis1: boolean,
-	g1: boolean,
-	gis1: boolean,
-	a1: boolean,
-	ais1: boolean,
-	b1: boolean,
-	c2: boolean,
-	cis2: boolean,
-	d2: boolean,
-	dis2: boolean,
-	e2: boolean,
-	f2: boolean,
-	fis2: boolean,
-	g2: boolean,
-	gis2: boolean,
-	a2: boolean,
-	ais2: boolean,
-	b2: boolean,
-}
-
 // eslint-disable-next-line import/no-anonymous-default-export
 export default function (props: PropsWithChildren<any> &
 		{ activeFrequencies: (fs: number[]) => void, octave: number, tempFrequency: number }) {

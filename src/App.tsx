@@ -63,12 +63,8 @@ function App() {
 	const [selectedZetTrack, setSelectedZetTrack] = useState({...new Track(), title:'No Track'})
 
 	useEffect(() => {
-		// console.log('app: ', tracks)
-	},[zet])
-
-	useEffect(() => {
 		window.api.receive(com.pick_file, (data: string) => filePicked(data))
-		window.api.receive(com.read_nml, (data: string) => fileRed(data))
+		window.api.receive(com.read_nml, (data: string) => nmlRed(data))
 		window.api.receive(com.read_collection, (data: []) => collectionRed(data))
 		window.api.send(com.read_collection, undefined)
 	},[])
@@ -85,15 +81,13 @@ function App() {
 		window.api.send(com.read_nml, filename)
 	}
 
-	function fileRed(data:any) {
-		// console.log('fileRead: ', data)
+	function nmlRed(data:any) {
 		const parser = new DOMParser()
 		const doc = parser.parseFromString(data, "application/xml");
 		const entries = doc.getElementsByTagName('COLLECTION').item(0).getElementsByTagName('ENTRY')
 		const trax = []
 		for(let i = 0; i< entries.length; i++) {
 			const entry = entries.item(i)
-			// console.log(entry)
 			const track = new Track();
 			track.modified_date = entry.getAttribute('MODIFIED_DATE')
 			track.modified_time = entry.getAttribute('MODIFIED_TIME')
@@ -101,8 +95,8 @@ function App() {
 			track.artist = entry.getAttribute('ARTIST')
 			const location = entry.getElementsByTagName('LOCATION').item(0)
 			track.dir = location.getAttribute('DIR')
-			track.file = location.getAttribute('FILE')
 			track.volume = location.getAttribute('VOLUME')
+			track.file = track.volume +track.dir.split(':').join('') +location.getAttribute('FILE')
 			track.volumeid = location.getAttribute('VOLUMEID')
 			const info = entry.getElementsByTagName('INFO').item(0)
 			track.bitrate = info.getAttribute('BITRATE')
@@ -124,12 +118,11 @@ function App() {
 			const musicalKey = entry.getElementsByTagName('MUSICAL_KEY').item(0)
 			track.musical_key = musicalKey.getAttribute('VALUE')
 			trax.push(track)
-			// console.log(dir)
 		}
 		// console.log(trax)
 		setZet(trax)
 	}
-
+	
 	return (
 			<div style={{...app, height:height}}>
 				<PageHeader/>
@@ -139,8 +132,8 @@ function App() {
 					<CollectionHeader />
 				</div>
 				<div style={{...detailsRow}}>
-					<TrackDetail style={{marginRight:10, marginBottom:10}} track={selectedZetTrack} />
-					<TrackDetail style={{marginBottom:10}} track={selectedCollectionTrack} />
+					<TrackDetail style={{marginRight:10, marginBottom:10}} track={selectedZetTrack} loadChannel={'left'} />
+					<TrackDetail style={{marginBottom:10}} track={selectedCollectionTrack} loadChannel={'right'} />
 				</div>
 				<div style={{...tableRow}}>
 					<div style={{...tableRowItem, height:height -470, width:0, marginRight:10}}>

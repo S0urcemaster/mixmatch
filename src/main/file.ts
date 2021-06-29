@@ -47,9 +47,22 @@ ipcMain.on(com.read_nml, function (event, filename) {
 	})
 })
 
-ipcMain.on(com.read_mp3, function (event, filename) {
+// ipcMain.on(com.read_mp3, function (event, filename) {
+// 	fs.readFile(filename, (err, data) => {
+// 		mainWindow.webContents.send(com.read_mp3, data.buffer);
+// 	})
+// })
+
+ipcMain.on(com.read_mp3 +'left', function (event, filename) {
 	fs.readFile(filename, (err, data) => {
-		mainWindow.webContents.send(com.read_mp3, data.buffer);
+		mainWindow.webContents.send(com.read_mp3 +'left', data.buffer);
 	})
 })
+
+ipcMain.on(com.read_mp3 +'right', function (event, filename) {
+	fs.readFile(filename, (err, data) => {
+		mainWindow.webContents.send(com.read_mp3 +'right', data.buffer);
+	})
+})
+
 

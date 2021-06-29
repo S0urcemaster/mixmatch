@@ -19,3 +19,14 @@ div {
 *:focus {
 	outline: none;
 }
+
+.bp3-html-select select {
+	padding-right:0;
+	font-weight:bold;
+	color: #c40000;
+}
+
+.bp3-html-select span {
+	margin-top:3px;
+	margin-right:-4px
+}
