@@ -11,6 +11,7 @@ export function calcFrequency(interval:number, octave:number):number {
 }
 
 export function saveCollection(tracks:Track[]):void {
+	console.log('save C', tracks)
 	window.api.send(com.save_collection, tracks)
 }
 

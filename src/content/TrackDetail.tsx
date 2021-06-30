@@ -12,7 +12,9 @@ const padder:css = {
 }
 
 export default function (props: PropsWithChildren<any> & {
-	track:Track, loadChannel:string}) {
+	track:Track, loadChannel:string
+	updateActiveNotes:(notes:number[]) => void,
+}) {
 
 	return (
 			<Card style={{...props.style, padding:0, width:'100%'}}>
@@ -51,7 +53,8 @@ export default function (props: PropsWithChildren<any> & {
 					</tbody>
 				</table>
 				<Divider style={{margin: 0}} />
-				<Player track={props.track} loadChannel={props.loadChannel} />
+				<Player track={props.track} loadChannel={props.loadChannel}
+						  updateActiveNotes={(notes:number[]) => props.updateActiveNotes(notes)} />
 			</Card>
 	)
 }

@@ -18,8 +18,9 @@ const padder: css = {
 const audioCtx = new AudioContext()
 
 export default function (props: PropsWithChildren<any> & {
-	track:Track, audioCtx:AudioContext, loadChannel:string
-}) {
+	track:Track, audioCtx:AudioContext, loadChannel:string,
+	updateActiveNotes:(notes:number[]) => void,
+}):JSX.Element {
 	
 	// keep in memory after decoding:
 	const [audioBuffer, setAudioBuffer] = useState(null)
@@ -42,8 +43,6 @@ export default function (props: PropsWithChildren<any> & {
 	const [oscPlaying, setOscPlaying] = useState(false)
 	const [oscGain, setOscGain] = useState(50)
 	const [octave, setOctave] = useState(4)
-	// const [oscFreqs, setOscFreqs] = useState([])
-	// const [tempFreq, setTempFreq] = useState(undefined)
 	
 	const [activeNotes, setActiveNotes] = useState([])
 	const [tempNote, setTempNote] = useState(undefined)
@@ -56,6 +55,10 @@ export default function (props: PropsWithChildren<any> & {
 		oscGainNode.connect(audioCtx.destination)
 		audioGainNode.connect(audioCtx.destination)
 	},[])
+	
+	useEffect(() => {
+		props.updateActiveNotes(activeNotes)
+	},[activeNotes])
 	
 	useEffect(() => {
 		if(audioNode) {
@@ -83,6 +86,8 @@ export default function (props: PropsWithChildren<any> & {
 				audioStop()
 			}
 			setAudioLoading(true)
+			setActiveNotes(props.track.keys)
+			console.log(props.track.keys)
 			window.api.send(com.read_mp3 +props.loadChannel, props.track.file)
 		}
 	}, [props.track])

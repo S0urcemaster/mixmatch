@@ -7,9 +7,9 @@ contextBridge.exposeInMainWorld(
 		"api", {
 			send: (channel: string, data: any) => {
 				// whitelist channels
-				const validChannels = [com.pick_file, com.read_nml,
+				const validChannels = [com.pick_file, com.read_zet_nml,
 					com.read_collection, com.read_mp3 +'left', com.read_mp3 +'right',
-						com.save_collection
+						com.save_collection, com.read_collection_nml,
 				]
 				if (validChannels.includes(channel)) {
 					console.log('bridge send: ', channel)
@@ -17,9 +17,9 @@ contextBridge.exposeInMainWorld(
 				}
 			},
 			receive: (channel: string, func: (arg0: any) => void) => {
-				const validChannels = [com.pick_file, com.read_nml,
+				const validChannels = [com.pick_file, com.read_zet_nml,
 					com.read_collection, com.read_mp3 +'left', com.read_mp3 +'right',
-					com.save_collection
+					com.save_collection, com.read_collection_nml,
 				]
 				if (validChannels.includes(channel)) {
 					console.log('bridge receive: ', channel)

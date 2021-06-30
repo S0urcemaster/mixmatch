@@ -67,8 +67,9 @@ function App() {
 
 	useEffect(() => {
 		window.api.receive(com.pick_file, (data:string) => filePicked(data))
-		window.api.receive(com.read_nml, (data:string) => nmlRed(data))
+		window.api.receive(com.read_zet_nml, (data:string) => nmlRed(data))
 		window.api.receive(com.read_collection, (data:any) => collectionRed(data.pop()))
+		window.api.receive(com.read_collection_nml, (data:any) => collectionNmlRed(data))
 		window.api.send(com.read_collection, undefined)
 	},[])
 	
@@ -86,17 +87,16 @@ function App() {
 		setCollection(data)
 	}
 
+	function collectionNmlRed(data:any) {
+		setCollection(lib.fromNml(data))
+	}
+
 	function filePicked(filename:string) {
-		window.api.send(com.read_nml, filename)
+		window.api.send(com.read_zet_nml, filename)
 	}
 
 	function nmlRed(data:any) {
-		if(data[0] && data[0].title) {
-			setZet(lib.fromNml(data))
-		}
-		else {
-			setCollection(lib.fromNml(data))
-		}
+		setZet(lib.fromNml(data))
 	}
 	
 	function saveCollection() {
@@ -104,7 +104,17 @@ function App() {
 	}
 	
 	function reimportCollection() {
-		window.api.send(com.read_nml, 'all.nml')
+		window.api.send(com.read_collection_nml, 'all.nml')
+	}
+	
+	function setActiveCollectionNotes(notes:number[]) {
+		console.log('app', notes)
+		selectedCollectionTrack.keys = notes
+	}
+	
+	function setActiveZetNotes(notes:number[]) {
+		// console.log('app', notes)
+		selectedZetTrack.keys = notes
 	}
 	
 	return (
@@ -116,8 +126,12 @@ function App() {
 					<CollectionHeader />
 				</div>
 				<div style={{...detailsRow}}>
-					<TrackDetail style={{marginRight:10, marginBottom:10}} track={selectedZetTrack} loadChannel={'left'} />
-					<TrackDetail style={{marginBottom:10}} track={selectedCollectionTrack} loadChannel={'right'} />
+					<TrackDetail style={{marginRight:10, marginBottom:10}} track={selectedZetTrack} loadChannel={'left'}
+									 updateActiveNotes={(notes:number[]) => setActiveZetNotes(notes)}
+					/>
+					<TrackDetail style={{marginBottom:10}} track={selectedCollectionTrack} loadChannel={'right'}
+									 updateActiveNotes={(notes:number[]) => setActiveCollectionNotes(notes)}
+					/>
 				</div>
 				<div style={{...tableRow }}>
 					<div style={{...tableRowItem, width:0, marginRight:10, height:height -450, overflowY:'auto'}}>

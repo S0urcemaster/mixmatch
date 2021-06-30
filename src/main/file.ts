@@ -48,7 +48,7 @@ ipcMain.on(com.read_collection, function () {
 
 ipcMain.on(com.save_collection, function (event, tracks:Track[]) {
 	console.log('saving')
-	fs.writeFile('collection1.mxm', JSON.stringify(tracks), function(err) {
+	fs.writeFile('collection.mxm', JSON.stringify(tracks), function(err) {
 		if (err) {
 			console.log(err);
 		}
@@ -61,17 +61,23 @@ ipcMain.on(com.pick_file, function () {
 		properties: ['openFile']
 	}).then(result => {
 		if(result.filePaths[0]) {
-			mainWindow.webContents.send(com.pick_file, result.filePaths[0][0]);
+			mainWindow.webContents.send(com.pick_file, result.filePaths[0]);
 		}
 	}).catch(err => {
 		console.log(err)
 	})
 })
 
-ipcMain.on(com.read_nml, function (event, filename) {
+ipcMain.on(com.read_zet_nml, function (event, filename) {
 	console.log('filename:', filename)
+	fs.readFile(filename.pop(), (err, data) => {
+		mainWindow.webContents.send(com.read_zet_nml, data.toString());
+	})
+})
+
+ipcMain.on(com.read_collection_nml, function (event, filename) {
 	fs.readFile(filename, (err, data) => {
-		mainWindow.webContents.send(com.read_nml, data.toString());
+		mainWindow.webContents.send(com.read_collection_nml, data.toString());
 	})
 })
 

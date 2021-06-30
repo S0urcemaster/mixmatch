@@ -25,7 +25,8 @@ const styles = {
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default function (props: PropsWithChildren<any> &
-		{ tracks: Track[], selected:(track:Track) => void }):JSX.Element {
+		{ tracks: Track[], selected:(track:Track) => void,
+		}):JSX.Element {
 
 	// const [tracks, setTracks] = useState([])
 	const tracks = props.tracks
