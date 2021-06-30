@@ -6,6 +6,8 @@ import styles, {css} from '../styles'
 import Track from "../data/Track"
 import com from "../main/processcom";
 import Keys from "../components/Keys";
+import * as lib from '../lib/lib'
+import {calcFrequency} from '../lib/lib'
 
 declare const window: any;
 
@@ -40,8 +42,11 @@ export default function (props: PropsWithChildren<any> & {
 	const [oscPlaying, setOscPlaying] = useState(false)
 	const [oscGain, setOscGain] = useState(50)
 	const [octave, setOctave] = useState(4)
-	const [oscFreqs, setOscFreqs] = useState([])
-	const [tempFreq, setTempFreq] = useState(undefined)
+	// const [oscFreqs, setOscFreqs] = useState([])
+	// const [tempFreq, setTempFreq] = useState(undefined)
+	
+	const [activeNotes, setActiveNotes] = useState([])
+	const [tempNote, setTempNote] = useState(undefined)
 	
 	// the actual match value between two tracks
 	const [match, setMatch] = useState('?')
@@ -67,7 +72,7 @@ export default function (props: PropsWithChildren<any> & {
 		if(tempOsc) {
 			tempOsc.connect(oscGainNode)
 			tempOsc.type = 'sine'
-			tempOsc.frequency.setValueAtTime(tempFreq, audioCtx.currentTime)
+			tempOsc.frequency.setValueAtTime(lib.calcFrequency(tempNote, octave), audioCtx.currentTime)
 			tempOsc.start()
 		}
 	},[tempOsc])
@@ -83,7 +88,7 @@ export default function (props: PropsWithChildren<any> & {
 	}, [props.track])
 
 	useEffect(() => {
-		if(tempFreq) {
+		if(tempNote) {
 			setTempOsc(audioCtx.createOscillator())
 		}
 		else {
@@ -92,7 +97,7 @@ export default function (props: PropsWithChildren<any> & {
 				tempOsc.disconnect()
 			}
 		}
-	}, [tempFreq])
+	}, [tempNote])
 
 	useEffect(() => {
 		audioGainNode.gain.setValueAtTime(audioGain /100, 0)
@@ -114,7 +119,6 @@ export default function (props: PropsWithChildren<any> & {
 	},[oscGain])
 
 	const mp3Red = (data:ArrayBuffer) => {
-		console.log('mp3red')
 		if(audioNode) {
 			audioNode.disconnect()
 		}
@@ -153,11 +157,11 @@ export default function (props: PropsWithChildren<any> & {
 
 	function oscPlay() {
 		setOscPlaying(true)
-		oscFreqs.forEach((freq:number) => {
+		activeNotes.forEach((note:number) => {
 			const osc = audioCtx.createOscillator()
 			oscs.push(osc)
 			osc.type = 'sine'
-			osc.frequency.setValueAtTime(freq, audioCtx.currentTime)
+			osc.frequency.setValueAtTime(lib.calcFrequency(note, octave), audioCtx.currentTime)
 			osc.connect(oscGainNode)
 			osc.start()
 		})
@@ -172,6 +176,7 @@ export default function (props: PropsWithChildren<any> & {
 	}
 
 	const oscToggle = () => {
+		console.log(activeNotes)
 		if(oscPlaying) {
 			oscStop()
 		}
@@ -197,7 +202,10 @@ export default function (props: PropsWithChildren<any> & {
 				</div>
 				<Divider/>
 				<div style={{...padder, display: 'flex', justifyContent:'space-between'}}>
-					<Keys octave={octave} activeFrequencies={(fs:[]) => setOscFreqs(fs)} tempFrequency={(f:number) => setTempFreq(f)} />
+					
+					<Keys activeNotes={activeNotes} updateActiveNotes={(notes:[]) => setActiveNotes(notes)}
+							updateTempNote={(n:number) => setTempNote(n)} />
+					
 					<div style={{display: 'flex', justifyContent:'stretch'}}>
 						<div style={{paddingLeft:10, paddingRight:20}}>
 							<Slider value={oscGain} min={0} max={100} labelStepSize={10}

@@ -7,7 +7,7 @@ import CollectionActions from "./CollectionActions";
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export default function Collection(props: PropsWithChildren<any> &
-		{tracks:Track[], trackSelected:(track:Track) => void}) {
+		{tracks:Track[], trackSelected:(track:Track) => void, save:() => void, reimport:() => void}) {
 
 	const [tracks, setTracks] = useState(props.tracks)
 
@@ -16,12 +16,12 @@ export default function Collection(props: PropsWithChildren<any> &
 	},[props.tracks])
 
 	return (
-			<div>
-				<CollectionActions style={{}}/>
-				<div style={{overflowY:'auto', height:props.height}}>
+			<>
+				<CollectionActions save={props.save} reimport={props.reimport} />
+				<div style={{overflowY:'auto'}}>
 					<TrackList tracks={tracks} selected={(track:Track) => props.trackSelected(track)} />
 				</div>
-			</div>
+			</>
 	)
 
 

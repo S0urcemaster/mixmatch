@@ -42,7 +42,7 @@ export default function (props: PropsWithChildren<any> & {
 					</tr>
 					<tr>
 						<td>{props.track.bpm}</td>
-						<td>{props.track.initial_key}</td>
+						<td>{props.track.key}</td>
 						<td>{props.track.playtime}</td>
 						<td><GenreSelect/></td>
 					</tr>

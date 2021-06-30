@@ -21,7 +21,7 @@ function renderButton(text: string, iconName: IconName) {
 	);
 }
 // eslint-disable-next-line import/no-anonymous-default-export
-export default function (props: PropsWithChildren<any>) {
+export default function (props: PropsWithChildren<any> & {save:() => void, reimport:() => void}): JSX.Element {
 
 	return (
 			<div style={{backgroundColor:'white'}}>
@@ -29,6 +29,8 @@ export default function (props: PropsWithChildren<any>) {
 					{renderButton("Filter", "document")}
 					{renderButton("Sort", "edit")}
 					{renderButton("View", "eye-open")}
+					<Button icon='download' text={'Re-import'} onClick={props.reimport} />
+					<Button icon='floppy-disk' text={'Save'} onClick={props.save} />
 				</ButtonGroup>
 			</div>
 	)

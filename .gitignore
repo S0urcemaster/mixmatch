@@ -88,3 +88,7 @@ typings/
 # Electron-Forge
 out/
 /.idea/
+/all.nml
+/collection.mxm
+/collection1.mxm
+/collectionx.mxm

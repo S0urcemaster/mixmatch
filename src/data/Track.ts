@@ -26,7 +26,11 @@ export default class Track {
 	analyzed_db:string
 	musical_key:string
 	
-	matches:Match[] = []
+	// Active keys on keyboard
+	keys:number[] = []
+	
+	// Track matches
+	trackMatches:Match[] = []
 	
 	
 }

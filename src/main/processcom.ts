@@ -4,5 +4,5 @@ export default  {
 	read_nml: 'read nml',
 	read_collection: 'read collection',
 	read_mp3: 'read mp3',
-
+	save_collection: 'save collection',
 }

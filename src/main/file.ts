@@ -9,7 +9,11 @@ import { mainWindow } from "../index";
 import com from './processcom'
 import Track from "../data/Track";
 
-ipcMain.on(com.read_collection, function () {
+/**
+ * @deprecated
+ * reading from nmp instead
+ */
+ipcMain.on('!' +com.read_collection, function () {
 	glob( 'c:/tracks/2016 - 1/*.mp3', function( err, files ) {
 		const trax:Track[] = []
 		files.forEach(file => {
@@ -28,13 +32,36 @@ ipcMain.on(com.read_collection, function () {
 	});
 })
 
+// ipcMain.on(com.read_collection, function () {
+// 	fs.readFile('all.nml', (err, data) => {
+// 		mainWindow.webContents.send(com.read_collection, data.toString());
+// 	})
+// })
+
+ipcMain.on(com.read_collection, function () {
+	fs.readFile('collection.mxm', (err, data) => {
+		mainWindow.webContents.send(com.read_collection, JSON.parse(data.toString()));
+		// console.log(data)
+		// console.log(JSON.parse(data.toString()))
+	})
+})
+
+ipcMain.on(com.save_collection, function (event, tracks:Track[]) {
+	console.log('saving')
+	fs.writeFile('collection1.mxm', JSON.stringify(tracks), function(err) {
+		if (err) {
+			console.log(err);
+		}
+	})
+})
+
 ipcMain.on(com.pick_file, function () {
 	console.log('pick file')
 	dialog.showOpenDialog(mainWindow, {
 		properties: ['openFile']
 	}).then(result => {
 		if(result.filePaths[0]) {
-			mainWindow.webContents.send(com.pick_file, result.filePaths[0]);
+			mainWindow.webContents.send(com.pick_file, result.filePaths[0][0]);
 		}
 	}).catch(err => {
 		console.log(err)
@@ -42,16 +69,11 @@ ipcMain.on(com.pick_file, function () {
 })
 
 ipcMain.on(com.read_nml, function (event, filename) {
-	fs.readFile(filename[0], (err, data) => {
+	console.log('filename:', filename)
+	fs.readFile(filename, (err, data) => {
 		mainWindow.webContents.send(com.read_nml, data.toString());
 	})
 })
-
-// ipcMain.on(com.read_mp3, function (event, filename) {
-// 	fs.readFile(filename, (err, data) => {
-// 		mainWindow.webContents.send(com.read_mp3, data.buffer);
-// 	})
-// })
 
 ipcMain.on(com.read_mp3 +'left', function (event, filename) {
 	fs.readFile(filename, (err, data) => {

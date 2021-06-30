@@ -26,11 +26,9 @@ export default function DJSet(props: PropsWithChildren<any> &
 
 	return (
 			<>
-				<div>
-					<SetActions style={{marginRight: 10}}/>
-					<div style={{overflowY:'auto', height:props.height}}>
-						<TrackList tracks={props.tracks} selected={(track:Track) => props.trackSelected(track)} />
-					</div>
+				<SetActions style={{marginRight: 10}}/>
+				<div style={{overflowY:'auto'}}>
+					<TrackList tracks={props.tracks} selected={(track:Track) => props.trackSelected(track)} />
 				</div>
 			</>
 	)
