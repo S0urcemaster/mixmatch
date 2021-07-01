@@ -5,9 +5,10 @@ import fs from 'fs'
 import glob from 'glob'
 import id3 from 'node-id3'
 
-import { mainWindow } from "../index";
+import { mainWindow } from "../index"
 import com from './processcom'
-import Track from "../data/Track";
+import Track from "../data/Track"
+import * as lib from '../lib/lib'
 
 /**
  * @deprecated
@@ -40,9 +41,15 @@ ipcMain.on('!' +com.read_collection, function () {
 
 ipcMain.on(com.read_collection, function () {
 	fs.readFile('collection.mxm', (err, data) => {
-		mainWindow.webContents.send(com.read_collection, JSON.parse(data.toString()));
-		// console.log(data)
-		// console.log(JSON.parse(data.toString()))
+		const tracks = JSON.parse(data.toString())
+		// translate key notation
+		// tracks.forEach((track:Track) => {
+		// 	if(track.key && !isNaN(parseInt(track.key[0]))){
+		// 		console.log(track.key, lib.translateKey(track.key))
+		// 		track.key = lib.translateKey(track.key)
+		// 	}
+		// })
+		mainWindow.webContents.send(com.read_collection, tracks)
 	})
 })
 
@@ -52,11 +59,13 @@ ipcMain.on(com.save_collection, function (event, tracks:Track[]) {
 		if (err) {
 			console.log(err);
 		}
+		else {
+			mainWindow.webContents.send(com.save_collection, tracks)
+		}
 	})
 })
 
 ipcMain.on(com.pick_file, function () {
-	console.log('pick file')
 	dialog.showOpenDialog(mainWindow, {
 		properties: ['openFile']
 	}).then(result => {
@@ -69,7 +78,6 @@ ipcMain.on(com.pick_file, function () {
 })
 
 ipcMain.on(com.read_zet_nml, function (event, filename) {
-	console.log('filename:', filename)
 	fs.readFile(filename.pop(), (err, data) => {
 		mainWindow.webContents.send(com.read_zet_nml, data.toString());
 	})

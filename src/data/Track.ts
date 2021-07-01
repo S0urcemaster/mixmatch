@@ -32,5 +32,6 @@ export default class Track {
 	// Track matches
 	trackMatches:Match[] = []
 	
+	comment:string
 	
 }

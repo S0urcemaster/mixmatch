@@ -48,7 +48,7 @@ export default function (props: PropsWithChildren<any> & {
 	const [tempNote, setTempNote] = useState(undefined)
 	
 	// the actual match value between two tracks
-	const [match, setMatch] = useState('?')
+	const [match, setMatch] = useState('0')
 	
 	useEffect(() => {
 		window.api.receive(com.read_mp3 +props.loadChannel, (data:any) => mp3Red(data.pop()))

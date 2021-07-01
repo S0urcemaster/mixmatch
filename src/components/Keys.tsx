@@ -23,21 +23,22 @@ const noteSpacer: css = {
 const keySelectedColor = Colors.GRAY4
 const keyColor = Colors.LIGHT_GRAY2
 
+let notesActive = [
+	false, false, false, false, false, false, false, false,
+	false, false, false, false, false, false, false, false,
+	false, false, false, false, false, false, false, false,
+]
+
 // eslint-disable-next-line import/no-anonymous-default-export
 export default function (props: PropsWithChildren<any> &
 		{ activeNotes:number[],
 			updateActiveNotes: (notes: number[]) => void, updateTempNote: number }):JSX.Element {
 	
-	const notesActive = [
-		false, false, false, false, false, false, false, false,
-		false, false, false, false, false, false, false, false,
-		false, false, false, false, false, false, false, false,
-	]
 	
 	const [notesSelected, setNotesSelected] = useState([])
 	
 	useEffect(() => {
-		notesActive.forEach(na => false)
+		notesActive = notesActive.map(na => false)
 		props.activeNotes.forEach((n: number) => {
 			notesActive[n] = true
 		})
@@ -48,7 +49,8 @@ export default function (props: PropsWithChildren<any> &
 		notesActive[i] = !notesActive[i]
 		if (notesActive[i]) {
 			const notes = [...props.activeNotes]
-			const sort = notes.concat(i).sort()
+			const sort = notes.concat(i).sort((a, b) => {return a -b})
+			console.log(sort)
 			props.updateActiveNotes(sort)
 		} else {
 			const remaining = [...props.activeNotes]

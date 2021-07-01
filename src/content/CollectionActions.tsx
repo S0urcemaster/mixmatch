@@ -15,7 +15,7 @@ const padder:css = {
 
 function renderButton(text: string, iconName: IconName) {
 	return (
-			<Popover2 content={<FilterMenu />} placement="bottom-start">
+			<Popover2 transitionDuration={0} content={<FilterMenu />} placement="bottom-start">
 				<Button rightIcon="caret-down" icon={iconName} text={text} />
 			</Popover2>
 	);
@@ -25,12 +25,16 @@ export default function (props: PropsWithChildren<any> & {save:() => void, reimp
 
 	return (
 			<div style={{backgroundColor:'white'}}>
-				<ButtonGroup style={{ minWidth: 120 }}>
-					{renderButton("Filter", "document")}
-					{renderButton("Sort", "edit")}
-					{renderButton("View", "eye-open")}
-					<Button icon='download' text={'Re-import'} onClick={props.reimport} />
-					<Button icon='floppy-disk' text={'Save'} onClick={props.save} />
+				<ButtonGroup style={{ minWidth: 120, display:'flex', justifyContent:'space-between' }}>
+					<div>
+						{renderButton("Filter", "document")}
+						{renderButton("Sort", "edit")}
+						{renderButton("View", "eye-open")}
+					</div>
+					<div>
+						<Button disabled={true} icon='download' text={'Re-import'} onClick={props.reimport} />
+						<Button icon='floppy-disk' text={'Save'} onClick={props.save} />
+					</div>
 				</ButtonGroup>
 			</div>
 	)

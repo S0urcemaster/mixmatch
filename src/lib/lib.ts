@@ -3,6 +3,46 @@ import com from '../main/processcom'
 
 declare const window: any
 
+export function findByTitle(collection:Track[], title:string):Track|undefined {
+	return collection.find((track:Track) => track.title === title)
+}
+
+export function translateKey(openKey:string):string {
+	const open = ['1m',   '2m',   '3m',   '4m',    '5m',    '6m',    '7m',    '8m',    '9m',   '10m',  '11m',  '12m',
+		'1d',   '2d',   '3d',   '4d',   '5d',   '6d',   '7d',    '8d',    '9d',    '10d',   '11d',   '12d']
+	const chor = ['Amin', 'Emin', 'Bmin', 'F#min', 'C#min', 'G#min', 'D#min', 'A#min', 'Fmin', 'Cmin', 'Gmin', 'Dmin',
+		'Cmaj', 'Gmaj', 'Dmaj', 'Amaj', 'Emaj', 'Bmaj', 'F#maj', 'C#maj', 'G#maj', 'D#maj', 'A#maj', 'Fmaj']
+	return chor[open.indexOf(openKey)]
+}
+
+export function getKeyName(num:number) {
+	switch(num) {
+		case 0: return 'C'; 
+		case 1: return 'C#'; 
+		case 2: return 'D'; 
+		case 3: return 'D#'; 
+		case 4: return 'E'; 
+		case 5: return 'F'; 
+		case 6: return 'F#'; 
+		case 7: return 'G'; 
+		case 8: return 'G#'; 
+		case 9: return 'A'; 
+		case 10: return 'A#'; 
+		case 11: return 'B'; 
+		case 12: return 'C'; 
+		case 13: return 'C#'; 
+		case 14: return 'D'; 
+		case 15: return 'D#'; 
+		case 16: return 'E'; 
+		case 17: return 'F'; 
+		case 18: return 'F#'; 
+		case 19: return 'G'; 
+		case 20: return 'G#'; 
+		case 21: return 'A'; 
+		case 22: return 'A#'; 
+		case 23: return 'B'; 
+	}
+}
 
 const fNoteC = 16.35
 
@@ -11,7 +51,6 @@ export function calcFrequency(interval:number, octave:number):number {
 }
 
 export function saveCollection(tracks:Track[]):void {
-	console.log('save C', tracks)
 	window.api.send(com.save_collection, tracks)
 }
 
