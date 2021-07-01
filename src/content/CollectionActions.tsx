@@ -8,6 +8,7 @@ import styles, {css} from '../styles'
 
 import '../App.css'
 import FilterMenu from "./FilterMenu";
+import CollectionFilterMenu from './CollectionFilterMenu'
 
 const padder:css = {
 	padding:5,
@@ -21,18 +22,23 @@ function renderButton(text: string, iconName: IconName) {
 	);
 }
 // eslint-disable-next-line import/no-anonymous-default-export
-export default function (props: PropsWithChildren<any> & {save:() => void, reimport:() => void}): JSX.Element {
+export default function (props: PropsWithChildren<any> &
+		{save:() => void, reimport:() => void, importNml:() => void}
+): JSX.Element {
 
 	return (
 			<div style={{backgroundColor:'white'}}>
 				<ButtonGroup style={{ minWidth: 120, display:'flex', justifyContent:'space-between' }}>
 					<div>
-						{renderButton("Filter", "document")}
+						<Popover2 transitionDuration={0} content={<CollectionFilterMenu importNml={props.importNml}/>}
+									 placement="bottom-start">
+							<Button rightIcon="caret-down" icon='filter' text={'Filter'} />
+						</Popover2>
 						{renderButton("Sort", "edit")}
 						{renderButton("View", "eye-open")}
 					</div>
 					<div>
-						<Button disabled={true} icon='download' text={'Re-import'} onClick={props.reimport} />
+						<Button disabled={false} icon='download' text={'Re-import'} onClick={props.reimport} />
 						<Button icon='floppy-disk' text={'Save'} onClick={props.save} />
 					</div>
 				</ButtonGroup>

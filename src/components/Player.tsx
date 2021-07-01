@@ -206,7 +206,6 @@ export default function (props: PropsWithChildren<any> & {
 	}
 
 	const oscToggle = () => {
-		console.log(activeNotes)
 		if(oscPlaying) {
 			oscStop()
 		}

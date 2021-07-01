@@ -7,6 +7,7 @@ import Player from "../components/Player"
 import Track from "../data/Track"
 import GenreSelect from "../components/GenreSelect";
 import Match from '../data/Match'
+import * as lib from '../lib/lib'
 
 const padder:css = {
 	padding:5,
@@ -67,7 +68,7 @@ export default function (props: PropsWithChildren<any> & {
 						</tr>
 						<tr>
 							<td>{props.track.bpm}</td>
-							<td>{props.track.key}</td>
+							<td>{lib.noteFromMusicalKey(parseInt(props.track.musical_key))}</td>
 							<td>{props.track.playtime}</td>
 							<td><GenreSelect/></td>
 						</tr>

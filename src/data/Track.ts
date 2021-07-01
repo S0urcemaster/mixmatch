@@ -10,6 +10,8 @@ export default class Track {
 	file:string
 	volume:string
 	volumeid:string
+	album:string
+	album_track: string
 	bitrate:string
 	genre:string
 	key:string

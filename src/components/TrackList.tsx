@@ -27,10 +27,34 @@ const styles = {
 // eslint-disable-next-line import/no-anonymous-default-export
 export default function (props: PropsWithChildren<any> &
 		{ tracks: Track[], selected:(track:Track) => void,
-		}):JSX.Element {
+		whiteFilters:Track[][], blackFilters:Track[][],
+		}
+):JSX.Element {
 
-	// const [tracks, setTracks] = useState([])
-	const tracks = props.tracks
+	const [tracks, setTracks] = useState([])
+	
+	useEffect(() => {
+		if(props.whiteFilters && props.whiteFilters.length >0) {
+			setTracks(props.tracks.filter((track:Track) => {
+				if(lib.findByTitle(props.whiteFilters[0], track.title)) {
+					return true
+				}
+			}))
+		}
+		else {
+			setTracks(props.tracks)
+		}
+	}, [props.tracks])
+	
+	useEffect(() => {
+		if(props.whiteFilters && props.whiteFilters.length >0) {
+			setTracks(tracks.filter((track:Track) => {
+				if(lib.findByTitle(props.whiteFilters[0], track.title)) {
+					return true
+				}
+			}))
+		}
+	}, [props.whiteFilters])
 
 	function click(track:Track) {
 		props.selected(track)
@@ -51,7 +75,7 @@ export default function (props: PropsWithChildren<any> &
 							<div style={{display:'flex', justifyContent:'space-between'}}>
 								<div style={{...styles.horizontalList}}>
 									<div style={{...styles.plainText, ...styles.horizontalItem}}>{track.bpm} bpm</div>
-									<div style={{...styles.plainText, ...styles.horizontalItem}}>{track.key}</div>
+									<div style={{...styles.plainText, ...styles.horizontalItem}}>{lib.noteFromMusicalKey(parseInt(track.musical_key))}</div>
 									<div style={{...styles.plainText, ...styles.horizontalItem}}>{track.genre}</div>
 								</div>
 								<div style={{display:'flex'}}>

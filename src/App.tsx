@@ -1,5 +1,3 @@
-// import { contextBridge } from 'electron'
-
 import React, {useEffect, useState} from 'react';
 
 import { Button, Divider } from "@blueprintjs/core";
@@ -13,7 +11,6 @@ import * as lib from './lib/lib'
 
 import com from './main/processcom'
 import Track from "./data/Track"
-import Data from "./data/Collection"
 
 import DJSet from "./content/DJSet";
 import Collection from "./content/Collection"
@@ -47,7 +44,6 @@ const tableRow:css = {
 const tableRowItem:css = {
 	flex:'1 1 auto',
 	height:'90%'
-	// width:'100%',
 }
 
 declare const window: any
@@ -61,7 +57,6 @@ function App() {
 		// console.log(width, height)
 	},[width, height])
 
-	const [zet, setZet] = useState([])
 	const [collection, setCollection] = useState([])
 	const [selectedCollectionTrack, setSelectedCollectionTrack] = useState({...new Track(), title:'No Track'})
 	const [selectedZetTrack, setSelectedZetTrack] = useState({...new Track(), title:'No Track'})
@@ -69,47 +64,33 @@ function App() {
 	const [collectionMatch, setCollectionMatch] = useState(undefined)
 
 	useEffect(() => {
-		window.api.receive(com.pick_file, (data:string) => filePicked(data))
-		window.api.receive(com.read_zet_nml, (data:string) => nmlRed(data))
 		window.api.receive(com.read_collection, (data:any) => collectionRed(data.pop()))
-		window.api.receive(com.read_collection_nml, (data:any) => collectionNmlRed(data))
+		window.api.receive(com.reimport_all, (data:any) => importNmlRed(data))
 		window.api.receive(com.save_collection, () => collectionSaved())
 		window.api.send(com.read_collection, undefined)
 	},[])
 	
 	useEffect(() => {
-		if(selectedZetTrack.title !== 'No Track') {
+		if(selectedZetTrack && selectedZetTrack.title !== 'No Track') {
 			setSelectedZetTrack(lib.findByTitle(collection, selectedZetTrack.title))
 		}
-		if(selectedCollectionTrack.title !== 'No Track') {
+		if(selectedCollectionTrack && selectedCollectionTrack.title !== 'No Track') {
 			setSelectedCollectionTrack(lib.findByTitle(collection, selectedCollectionTrack.title))
 		}
-		propagateMatches()
 	},[collection])
-	
-	// useEffect(() => {
-	// 	console.log('upd')
-	// 	propagateMatches()
-	// },[selectedZetTrack.trackMatches])
-
-	function importNml() {
-		window.api.send(com.pick_file, undefined)
-	}
 
 	function collectionRed(data:any) {
 		setCollection(data)
+	// 	if(selectedZetTrack && selectedZetTrack.title !== 'No Track') {
+	// 		setSelectedZetTrack(lib.findByTitle(collection, selectedZetTrack.title))
+	// 	}
+	// 	if(selectedCollectionTrack && selectedCollectionTrack.title !== 'No Track') {
+	// 		setSelectedCollectionTrack(lib.findByTitle(collection, selectedCollectionTrack.title))
+	// 	}
 	}
 
-	function collectionNmlRed(data:any) {
+	function importNmlRed(data:any) {
 		setCollection(lib.fromNml(data))
-	}
-
-	function filePicked(filename:string) {
-		window.api.send(com.read_zet_nml, filename)
-	}
-
-	function nmlRed(data:any) {
-		setZet(lib.fromNml(data))
 	}
 	
 	function saveCollection() {
@@ -121,7 +102,8 @@ function App() {
 	}
 	
 	function reimportCollection() {
-		window.api.send(com.read_collection_nml, 'all.nml')
+		console.log('re')
+		window.api.send(com.reimport_all)
 	}
 	
 	function setActiveCollectionNotes(notes:number[]) {
@@ -137,11 +119,10 @@ function App() {
 	}
 	
 	function setCollectionComment(comment:string) {
-		selectedZetTrack.comment = comment
+		selectedCollectionTrack.comment = comment
 	}
 	
 	function updateZetMatch(match:number) {
-		console.log('upd', match)
 		const exist = lib.findMatch(selectedCollectionTrack.trackMatches, selectedZetTrack.title)
 		if(exist) {
 			if(match === 0) {
@@ -154,14 +135,10 @@ function App() {
 		else {
 			selectedCollectionTrack.trackMatches.push({title:selectedZetTrack.title, value:match})
 		}
-		console.log('upd', selectedCollectionTrack.trackMatches)
-		// if(selectedCollectionTrack && selectedZetTrack.title)
-		// setZetMatch(lib.findMatch(selectedCollectionTrack.trackMatches, selectedZetTrack.title))
-		propagateMatches()
+		// propagateMatches()
 	}
 	
 	function updateCollectionMatch(match:number) {
-		console.log('upd', match)
 		const exist = lib.findMatch(selectedZetTrack.trackMatches, selectedCollectionTrack.title)
 		if(exist) {
 			if(match === 0) {
@@ -174,15 +151,7 @@ function App() {
 		else {
 			selectedZetTrack.trackMatches.push({title:selectedCollectionTrack.title, value:match})
 		}
-		console.log('upd', selectedZetTrack.trackMatches)
-		propagateMatches()
-	}
-	
-	function getMatch(track:Track, title:string) {
-		if(track.title !== 'No Track') {
-			return lib.findMatch(track.trackMatches, title)
-		}
-		return undefined
+		// propagateMatches()
 	}
 	
 	function propagateMatches() {
@@ -190,8 +159,8 @@ function App() {
 				selectedCollectionTrack && selectedCollectionTrack.title !== 'No Track') {
 			setZetMatch(lib.findMatch(selectedCollectionTrack.trackMatches, selectedZetTrack.title))
 			setCollectionMatch(lib.findMatch(selectedZetTrack.trackMatches, selectedCollectionTrack.title))
-			console.log('zet', lib.findMatch(selectedZetTrack.trackMatches, selectedCollectionTrack.title))
-			console.log('col', lib.findMatch(selectedCollectionTrack.trackMatches, selectedZetTrack.title))
+			// console.log('zet', lib.findMatch(selectedZetTrack.trackMatches, selectedCollectionTrack.title))
+			// console.log('col', lib.findMatch(selectedCollectionTrack.trackMatches, selectedZetTrack.title))
 		}
 	}
 	
@@ -225,13 +194,13 @@ function App() {
 					<div style={{...tableRowItem, width:0, marginRight:10, height:height -450, overflowY:'auto'}}>
 						<DJSet tracks={collection} trackSelected={(track:Track) => setSelectedZetTrack(track)}
 								 style={{height:height -490, overflowY:'auto'}}
-								 importNml={importNml} save={saveCollection}
+								 save={saveCollection}
 						/>
 					</div>
 					<div style={{...tableRowItem, width:0}}>
 						<Collection tracks={collection} save={saveCollection} reimport={reimportCollection}
 										trackSelected={(track:Track) => setSelectedCollectionTrack(track)}
-										style={{height:height -490, overflowY:'auto'}}/>
+										style={{height:height -490, overflowY:'auto'}} />
 					</div>
 				</div>
 			</div>

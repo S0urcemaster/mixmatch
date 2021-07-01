@@ -23,14 +23,14 @@ function renderButton(text: string, iconName: IconName) {
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default function (props: PropsWithChildren<any> &
-		{ filterNml:() => void, importNml:() => void, }
+		{ importNml:() => void, }
 ):JSX.Element {
 	
 	return (
 			<div style={{backgroundColor:'white'}}>
 				<ButtonGroup style={{ minWidth: 120, display:'flex', justifyContent:'space-between'}}>
 					<div>
-						<Popover2 transitionDuration={0} content={<ZetFilterMenu importNml={props.filterNml}/>}
+						<Popover2 transitionDuration={0} content={<ZetFilterMenu importNml={props.importNml}/>}
 									 placement="bottom-start">
 							<Button rightIcon="caret-down" icon='filter' text={'Filter'} />
 						</Popover2>
@@ -38,7 +38,6 @@ export default function (props: PropsWithChildren<any> &
 						{renderButton("View", "eye-open")}
 					</div>
 					<div>
-						<Button icon='bring-data' text={'Import nml'} onClick={props.importNml} />
 						<Button icon='floppy-disk' text={'Save'} onClick={props.save} />
 					</div>
 				</ButtonGroup>
