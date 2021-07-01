@@ -21,6 +21,7 @@ import TrackDetail from "./content/TrackDetail"
 import PageHeader from "./content/PageHeader";
 import DJZetHeader from "./content/DJSetHeader";
 import CollectionHeader from "./content/CollectionHeader";
+import Match from './data/Match'
 
 
 const app:css = {
@@ -64,6 +65,8 @@ function App() {
 	const [collection, setCollection] = useState([])
 	const [selectedCollectionTrack, setSelectedCollectionTrack] = useState({...new Track(), title:'No Track'})
 	const [selectedZetTrack, setSelectedZetTrack] = useState({...new Track(), title:'No Track'})
+	const [zetMatch, setZetMatch] = useState(undefined)
+	const [collectionMatch, setCollectionMatch] = useState(undefined)
 
 	useEffect(() => {
 		window.api.receive(com.pick_file, (data:string) => filePicked(data))
@@ -81,7 +84,13 @@ function App() {
 		if(selectedCollectionTrack.title !== 'No Track') {
 			setSelectedCollectionTrack(lib.findByTitle(collection, selectedCollectionTrack.title))
 		}
+		propagateMatches()
 	},[collection])
+	
+	// useEffect(() => {
+	// 	console.log('upd')
+	// 	propagateMatches()
+	// },[selectedZetTrack.trackMatches])
 
 	function importNml() {
 		window.api.send(com.pick_file, undefined)
@@ -120,20 +129,70 @@ function App() {
 	}
 	
 	function setActiveZetNotes(notes:number[]) {
-		// console.log(notes)
 		selectedZetTrack.keys = notes
-		// console.log(collection)
 	}
 	
 	function setZetComment(comment:string) {
-		// console.log(comment)
 		selectedZetTrack.comment = comment
-		// console.log(collection)
-		// setSelectedZetTrack({...selectedZetTrack, comment:comment})
 	}
 	
 	function setCollectionComment(comment:string) {
 		selectedZetTrack.comment = comment
+	}
+	
+	function updateZetMatch(match:number) {
+		console.log('upd', match)
+		const exist = lib.findMatch(selectedCollectionTrack.trackMatches, selectedZetTrack.title)
+		if(exist) {
+			if(match === 0) {
+				selectedCollectionTrack.trackMatches.splice(selectedCollectionTrack.trackMatches.indexOf(exist), 1)
+			}
+			else {
+				exist.value = match
+			}
+		}
+		else {
+			selectedCollectionTrack.trackMatches.push({title:selectedZetTrack.title, value:match})
+		}
+		console.log('upd', selectedCollectionTrack.trackMatches)
+		// if(selectedCollectionTrack && selectedZetTrack.title)
+		// setZetMatch(lib.findMatch(selectedCollectionTrack.trackMatches, selectedZetTrack.title))
+		propagateMatches()
+	}
+	
+	function updateCollectionMatch(match:number) {
+		console.log('upd', match)
+		const exist = lib.findMatch(selectedZetTrack.trackMatches, selectedCollectionTrack.title)
+		if(exist) {
+			if(match === 0) {
+				selectedZetTrack.trackMatches.splice(selectedZetTrack.trackMatches.indexOf(exist), 1)
+			}
+			else {
+				exist.value = match
+			}
+		}
+		else {
+			selectedZetTrack.trackMatches.push({title:selectedCollectionTrack.title, value:match})
+		}
+		console.log('upd', selectedZetTrack.trackMatches)
+		propagateMatches()
+	}
+	
+	function getMatch(track:Track, title:string) {
+		if(track.title !== 'No Track') {
+			return lib.findMatch(track.trackMatches, title)
+		}
+		return undefined
+	}
+	
+	function propagateMatches() {
+		if(selectedZetTrack && selectedZetTrack.title !== 'No Track' &&
+				selectedCollectionTrack && selectedCollectionTrack.title !== 'No Track') {
+			setZetMatch(lib.findMatch(selectedCollectionTrack.trackMatches, selectedZetTrack.title))
+			setCollectionMatch(lib.findMatch(selectedZetTrack.trackMatches, selectedCollectionTrack.title))
+			console.log('zet', lib.findMatch(selectedZetTrack.trackMatches, selectedCollectionTrack.title))
+			console.log('col', lib.findMatch(selectedCollectionTrack.trackMatches, selectedZetTrack.title))
+		}
 	}
 	
 	return (
@@ -148,10 +207,18 @@ function App() {
 					<TrackDetail style={{marginRight:10, marginBottom:10}} track={selectedZetTrack} loadChannel={'left'}
 									 updateActiveNotes={(notes:number[]) => setActiveZetNotes(notes)}
 									 updateComment={(comment:string) => setZetComment(comment)}
+									 updateMatch={(match:number) => updateZetMatch(match)}
+									 match={zetMatch}
+									 opposingLoaded={selectedCollectionTrack && selectedCollectionTrack.title !== 'No Track'}
+									 propagateMatches={propagateMatches}
 					/>
 					<TrackDetail style={{marginBottom:10}} track={selectedCollectionTrack} loadChannel={'right'}
 									 updateActiveNotes={(notes:number[]) => setActiveCollectionNotes(notes)}
 									 updateComment={(comment:string) => setCollectionComment(comment)}
+									 updateMatch={(match:number) => updateCollectionMatch(match)}
+									 match={collectionMatch}
+									 opposingLoaded={selectedZetTrack && selectedZetTrack.title !== 'No Track'}
+									 propagateMatches={propagateMatches}
 					/>
 				</div>
 				<div style={{...tableRow }}>

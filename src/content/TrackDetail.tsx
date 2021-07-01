@@ -6,6 +6,7 @@ import styles, {css} from '../styles'
 import Player from "../components/Player"
 import Track from "../data/Track"
 import GenreSelect from "../components/GenreSelect";
+import Match from '../data/Match'
 
 const padder:css = {
 	padding:5,
@@ -15,6 +16,10 @@ export default function (props: PropsWithChildren<any> & {
 	track:Track, loadChannel:string
 	updateActiveNotes:(notes:number[]) => void,
 	updateComment:(comment:string) => void,
+	updateMatch:(match:number) => void,
+	propagateMatches:() => void,
+	match:Match,
+	opposingLoaded:boolean,
 }) {
 	
 	const [comment, setComment] = useState('')
@@ -79,7 +84,12 @@ export default function (props: PropsWithChildren<any> & {
 				</div>
 				<Divider style={{margin: 0}} />
 				<Player track={props.track} loadChannel={props.loadChannel}
-						  updateActiveNotes={(notes:number[]) => props.updateActiveNotes(notes)} />
+						  updateActiveNotes={(notes:number[]) => props.updateActiveNotes(notes)}
+						  match={props.match}
+						  updateMatch={props.updateMatch}
+						  opposingLoaded={props.opposingLoaded}
+						  propagateMatches={props.propagateMatches}
+				/>
 			</Card>
 	)
 }

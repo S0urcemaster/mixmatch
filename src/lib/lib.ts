@@ -1,7 +1,13 @@
 import Track from '../data/Track'
 import com from '../main/processcom'
+import Match from '../data/Match'
 
 declare const window: any
+
+export function findMatch(matches:Match[], title:string):Match|undefined {
+	console.log('lib',matches, title)
+	return matches.find((match:Match) => match.title === title)
+}
 
 export function findByTitle(collection:Track[], title:string):Track|undefined {
 	return collection.find((track:Track) => track.title === title)

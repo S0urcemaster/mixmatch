@@ -1,5 +1,5 @@
 
 export default class Match {
-	ref:number
+	title:string
 	value:number
 }

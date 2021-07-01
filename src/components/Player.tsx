@@ -8,6 +8,7 @@ import com from "../main/processcom";
 import Keys from "../components/Keys";
 import * as lib from '../lib/lib'
 import {calcFrequency} from '../lib/lib'
+import Match from '../data/Match'
 
 declare const window: any;
 
@@ -20,6 +21,10 @@ const audioCtx = new AudioContext()
 export default function (props: PropsWithChildren<any> & {
 	track:Track, audioCtx:AudioContext, loadChannel:string,
 	updateActiveNotes:(notes:number[]) => void,
+	updateMatch:(match:number) => void,
+	propagateMatches:() => void,
+	match:Match,
+	opposingLoaded:boolean,
 }):JSX.Element {
 	
 	// keep in memory after decoding:
@@ -48,7 +53,7 @@ export default function (props: PropsWithChildren<any> & {
 	const [tempNote, setTempNote] = useState(undefined)
 	
 	// the actual match value between two tracks
-	const [match, setMatch] = useState('0')
+	const [match, setMatch] = useState(0)
 	
 	useEffect(() => {
 		window.api.receive(com.read_mp3 +props.loadChannel, (data:any) => mp3Red(data.pop()))
@@ -59,6 +64,20 @@ export default function (props: PropsWithChildren<any> & {
 	useEffect(() => {
 		props.updateActiveNotes(activeNotes)
 	},[activeNotes])
+	
+	useEffect(() => {
+		console.log('props.match', props.match)
+		if(props.match) {
+			setMatch(props.match.value)
+		}
+		else {
+			setMatch(0)
+		}
+	},[props.match])
+	
+	function updateMatch(value:number) {
+		props.updateMatch(value)
+	}
 	
 	useEffect(() => {
 		if(audioNode) {
@@ -87,7 +106,13 @@ export default function (props: PropsWithChildren<any> & {
 			}
 			setAudioLoading(true)
 			setActiveNotes(props.track.keys)
-			console.log(props.track.keys)
+			if(props.match) {
+				setMatch(props.match.value)
+			}
+			else {
+				setMatch(0)
+			}
+			props.propagateMatches()
 			window.api.send(com.read_mp3 +props.loadChannel, props.track.file)
 		}
 	}, [props.track])
@@ -224,7 +249,9 @@ export default function (props: PropsWithChildren<any> & {
 							<Button icon={oscPlaying ? 'pause' :'play'}
 									  onClick={oscToggle} style={{width:50, height:'100%'}} />
 							<div style={{height:20}} />
-							<HTMLSelect value={match} onChange={(event: React.ChangeEvent<HTMLSelectElement>):void => setMatch(event.target.value)} style={{width:50, height:35}}>
+							<HTMLSelect value={match} onChange={(event: any):void => updateMatch(event.target.value)}
+											style={{width:50, height:35}} disabled={!props.opposingLoaded}
+							>
 								<option>1.0</option>
 								<option>0.9</option>
 								<option>0.8</option>
